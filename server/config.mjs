@@ -48,8 +48,18 @@ export function parseTrustedProxyAddresses(value) {
   return addresses;
 }
 
-export function clientAddress(request, trustedProxyAddresses = new Set()) {
+export function clientAddress(
+  request,
+  trustedProxyAddresses = new Set(),
+  trustCloudflareConnectingIp = false,
+) {
   const peer = normalizeAddress(request.socket?.remoteAddress) || "unknown";
+  if (trustCloudflareConnectingIp) {
+    const cloudflareAddress = normalizeAddress(
+      request.headers?.["x-gutfeel-client-ip"],
+    );
+    if (cloudflareAddress) return cloudflareAddress;
+  }
   if (!trustedProxyAddresses.has(peer)) return peer;
   const forwarded = String(request.headers?.["x-forwarded-for"] ?? "");
   if (!forwarded) return peer;
@@ -70,10 +80,18 @@ export function serverConfiguration(options = {}, environment = process.env) {
     options.sourceCodeUrl ?? environment.SOURCE_CODE_URL,
     { required: production },
   );
+  const trustCloudflareConnectingIp = options.trustCloudflareConnectingIp ??
+    environment.TRUST_CLOUDFLARE_CONNECTING_IP === "1";
   const trustedProxyAddresses = options.trustedProxyAddresses instanceof Set
     ? options.trustedProxyAddresses
     : parseTrustedProxyAddresses(
       options.trustedProxyAddresses ?? environment.TRUSTED_PROXY_IPS,
     );
-  return { production, publicOrigin, sourceCodeUrl, trustedProxyAddresses };
+  return {
+    production,
+    publicOrigin,
+    sourceCodeUrl,
+    trustCloudflareConnectingIp,
+    trustedProxyAddresses,
+  };
 }

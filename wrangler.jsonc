@@ -1,0 +1,59 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "gutfeel",
+  "account_id": "2fb3fa83d5eb17c38b5ea80a55d4f545",
+  "main": "cloudflare/worker.mjs",
+  "compatibility_date": "2026-09-17",
+  "workers_dev": false,
+  "routes": [
+    {
+      "pattern": "gutfeel.atzy.dev",
+      "custom_domain": true
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "GUTFEEL_CONTAINER",
+        "class_name": "GutFeelContainer"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["GutFeelContainer"]
+    }
+  ],
+  "containers": [
+    {
+      "name": "gutfeel",
+      "class_name": "GutFeelContainer",
+      "image": "./Dockerfile",
+      "max_instances": 1,
+      "instance_type": "basic",
+      "constraints": {
+        "regions": ["APAC"]
+      },
+      "observability": {
+        "enabled": false,
+        "logs": {
+          "enabled": false
+        }
+      }
+    }
+  ],
+  "observability": {
+    "enabled": false,
+    "redact_query_string": true,
+    "logs": {
+      "enabled": false,
+      "invocation_logs": false,
+      "persist": false
+    },
+    "traces": {
+      "enabled": false,
+      "persist": false
+    }
+  }
+}

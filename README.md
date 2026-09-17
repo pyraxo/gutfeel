@@ -33,9 +33,24 @@ Open <http://localhost:4173>.
 
 ## Deploy
 
-The included Docker image runs one Node process and serves both HTTP and
-WebSocket traffic. A public deployment requires the exact browser origin and a
-link to the Corresponding Source for that build:
+The production target is a single Cloudflare Container behind a Worker at
+`gutfeel.atzy.dev`. Docker must be running locally for Wrangler to build the
+container image:
+
+```sh
+npx wrangler login
+npm run cloudflare:check
+npm run cloudflare:deploy
+```
+
+Wrangler creates the custom domain and certificate. The Worker routes every
+request to one APAC container so all lobby and WebSocket state remains in the
+same Node process. See [docs/SELF_HOSTING.md](docs/SELF_HOSTING.md) for setup,
+security, verification, and operational details.
+
+The Docker image can also run on any single-instance container host. A public
+deployment requires the exact browser origin and a link to the Corresponding
+Source for that build:
 
 ```sh
 docker build -t gutfeel .
@@ -46,9 +61,7 @@ docker run --rm \
   gutfeel
 ```
 
-Run one always-on replica. Keep HTTP and WebSockets on the same origin, and
-configure the proxy not to log the `credential` query parameter. See
-[docs/SELF_HOSTING.md](docs/SELF_HOSTING.md) for the complete deployment notes.
+Run one always-on replica and keep HTTP and WebSockets on the same origin.
 
 ## Source layout
 

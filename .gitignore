@@ -23,6 +23,7 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+.wrangler/
 
 # Local test and investigation output
 test-artifacts/

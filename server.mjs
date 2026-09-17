@@ -15,10 +15,11 @@ const lingoString=value=>'"'+String(value).replace(/["\r\n\x00]/g,'').slice(0,10
 const json=(res,status,value)=>res.writeHead(status,{'Content-Type':'application/json','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}).end(JSON.stringify(value));
 const bodyJson=async req=>{let size=0,chunks=[];for await(const chunk of req){size+=chunk.length;if(size>4096)throw Object.assign(new Error('body_too_large'),{status:413,code:'body_too_large'});chunks.push(chunk);}if(!size)return{};try{return JSON.parse(Buffer.concat(chunks).toString('utf8'));}catch{throw Object.assign(new Error('invalid_json'),{status:400,code:'invalid_json'});}};
 const bearer=req=>{const value=String(req.headers.authorization||'');return value.startsWith('Bearer ')?value.slice(7):'';};
+const scopedCredential=(req,url)=>String(req.headers['x-gutfeel-credential']||url.searchParams.get('credential')||'');
 export function createGutFeelServer(options={}){
  const configuration=serverConfiguration(options);
- const {publicOrigin,sourceCodeUrl,trustedProxyAddresses}=configuration;
- const requestAddress=req=>clientAddress(req,trustedProxyAddresses);
+ const {publicOrigin,sourceCodeUrl,trustCloudflareConnectingIp,trustedProxyAddresses}=configuration;
+ const requestAddress=req=>clientAddress(req,trustedProxyAddresses,trustCloudflareConnectingIp);
  const legacySetting=process.env.GUTFEL_LEGACY_OPEN;
  const legacyOpen=options.legacyOpen??legacySetting==='1';
  const hosts=new Map();
@@ -83,7 +84,7 @@ export function createGutFeelServer(options={}){
   if(pathname.startsWith('/legacy/MUI/')){
    if(publicOrigin&&req.headers.origin&&req.headers.origin!==publicOrigin){json(res,403,{error:'origin_not_allowed'});return;}
    const q=url.searchParams, subject=q.get('mymoviename')||'DS', name=q.get('myhostname')||'Host';
-   const lobbyId=q.get('lobby'),credential=q.get('credential'),instance=q.get('instance');
+   const lobbyId=q.get('lobby'),credential=scopedCredential(req,url),instance=q.get('instance');
    let entries;
    if(lobbyId){
     try{const grant=lobbies.connectionGrant(lobbyId,credential,instance);entries=lobbies.listHosts(grant,subject);}
@@ -110,7 +111,7 @@ export function createGutFeelServer(options={}){
  });
  const multiuser=attachMultiuser(server,{path:'/multiuser',onClientLogon:registerAuthenticatedHost,onClientClose:removeOwnedHostEntry,
   verifyOrigin:origin=>!publicOrigin||origin===publicOrigin,
-  resolveConnection:request=>{const query=new URL(request.url||'/', 'ws://localhost').searchParams;const lobbyId=query.get('lobby');if(!lobbyId){if(legacyOpen)return null;throw lobbies.error(401,'lobby_credential_required');}const credential=query.get('credential');const instance=query.get('instance');const grant=lobbies.connectionGrant(lobbyId,credential,instance);return{relay:grant.lobby.relay,grant,instance};}});
+  resolveConnection:request=>{const requestUrl=new URL(request.url||'/', 'ws://localhost');const query=requestUrl.searchParams;const lobbyId=query.get('lobby');if(!lobbyId){if(legacyOpen)return null;throw lobbies.error(401,'lobby_credential_required');}const credential=scopedCredential(request,requestUrl);const instance=query.get('instance');const grant=lobbies.connectionGrant(lobbyId,credential,instance);return{relay:grant.lobby.relay,grant,instance};}});
  const sweep=setInterval(()=>{try{lobbies.sweep();}catch{}},30_000);sweep.unref?.();server.on('close',()=>clearInterval(sweep));
  return {server,multiuser,lobbies};
 }

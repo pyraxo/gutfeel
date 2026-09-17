@@ -108,22 +108,32 @@ async function joinLobby(app, lobbyId) {
 function socketPath({ lobbyId, credential, instance, ...query }) {
   const params = new URLSearchParams({
     lobby: lobbyId,
-    credential,
     instance,
     ...Object.fromEntries(
       Object.entries(query).map(([key, value]) => [key, String(value)]),
     ),
   });
+  if (credential) params.set("credential", credential);
   return `/multiuser?${params}`;
 }
 
 async function openClient(
   app,
-  { lobbyId, credential, instance, movie = "DS", name, origin = PUBLIC_ORIGIN, ...query },
+  { lobbyId, credential, credentialHeader = false, instance, movie = "DS", name, origin = PUBLIC_ORIGIN, ...query },
 ) {
   const socket = new WebSocket(
-    app.wsBase + socketPath({ lobbyId, credential, instance, ...query }),
-    { origin },
+    app.wsBase + socketPath({
+      lobbyId,
+      credential: credentialHeader ? "" : credential,
+      instance,
+      ...query,
+    }),
+    {
+      origin,
+      ...(credentialHeader
+        ? { headers: { "x-gutfeel-credential": credential } }
+        : {}),
+    },
   );
   app.sockets.add(socket);
   const inbox = [];
@@ -256,6 +266,7 @@ test("public lobby API enforces Origin, capacity, state and role authority", asy
   const host = await openClient(app, {
     lobbyId: lobby.lobbyId,
     credential: lobby.facilitatorToken,
+    credentialHeader: true,
     instance: "host-main-0001",
     name: "Host",
     mode: "host",

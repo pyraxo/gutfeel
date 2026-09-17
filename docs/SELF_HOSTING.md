@@ -4,6 +4,80 @@ The service serves the browser client and report files over HTTP and upgrades
 `/multiuser` to the WebSocket Multiuser transport. Keep the HTTP and WebSocket
 origins together: clients resolve both through the same host and port.
 
+## Cloudflare Containers
+
+The production configuration deploys one `basic` Cloudflare Container in the
+APAC placement region behind a Worker custom domain at
+`https://gutfeel.atzy.dev`.
+
+### Prerequisites
+
+- `atzy.dev` is an active zone in the Cloudflare account.
+- The account has the Workers Paid plan, which enables Containers.
+- Docker is running locally.
+- Node.js 22 or newer is installed.
+
+Authenticate once on the deployment machine:
+
+```sh
+npx wrangler login
+npx wrangler whoami
+```
+
+The OAuth credential is held by Wrangler outside the repository. This
+deployment has no application secret to upload. Its production origin, source
+URL, port, and trusted Cloudflare forwarding mode are fixed in
+`cloudflare/worker.mjs`.
+
+### Validate and deploy
+
+```sh
+npm ci
+npm test
+npm run cloudflare:check
+npm run cloudflare:deploy
+```
+
+`wrangler.jsonc` creates the `gutfeel` Worker, its singleton Container binding,
+and the `gutfeel.atzy.dev` custom domain. Cloudflare creates the DNS record and
+TLS certificate automatically. The first request starts the container and can
+take longer than later requests.
+
+The Worker removes the lobby credential from the forwarded URL and passes it
+through an internal header. It also replaces any client-supplied internal IP
+header with Cloudflare's `CF-Connecting-IP`. Worker and Container observability
+are disabled, and query-string redaction remains enabled, so lobby credentials
+are not retained in Workers Logs.
+
+The Container is deliberately kept running after its first request. Lobby,
+Host, and peer-relay state is process-local, and Cloudflare Container WebSocket
+traffic cannot currently be relied on to renew the normal idle timeout.
+
+### Verify production
+
+```sh
+curl -fsS https://gutfeel.atzy.dev/health
+curl -fsSI https://gutfeel.atzy.dev/
+curl -fsSI https://gutfeel.atzy.dev/movies/client/main.dir
+```
+
+The health response must report `{"status":"ok"}`. The homepage must include
+HSTS and the other security headers added by the Worker. Create a lobby in one
+browser, join from another, and confirm that both remain connected through the
+same game start.
+
+Useful operational commands:
+
+```sh
+npx wrangler deployments status
+npx wrangler containers list
+npx wrangler containers images list
+```
+
+Do not enable live tailing or request logging while players are connected; the
+browser's WebSocket URL contains a scoped credential before the Worker removes
+it from the container-bound request.
+
 ## Docker
 
 ```sh

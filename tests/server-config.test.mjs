@@ -78,6 +78,21 @@ test("forwarded client addresses are used only behind explicitly trusted peers",
     clientAddress(request("127.0.0.1", "198.51.100.20")),
     "127.0.0.1",
   );
+  const cloudflareRequest = {
+    socket: { remoteAddress: "127.0.0.1" },
+    headers: { "x-gutfeel-client-ip": "203.0.113.7" },
+  };
+  assert.equal(clientAddress(cloudflareRequest), "127.0.0.1");
+  assert.equal(
+    clientAddress(cloudflareRequest, new Set(), true),
+    "203.0.113.7",
+  );
+  assert.equal(
+    serverConfiguration({}, {
+      TRUST_CLOUDFLARE_CONNECTING_IP: "1",
+    }).trustCloudflareConnectingIp,
+    true,
+  );
 
   const trusted = parseTrustedProxyAddresses("127.0.0.1, 10.0.0.2");
   assert.equal(
