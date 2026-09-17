@@ -5,9 +5,20 @@ for Singapore's Ministry of Education. It runs the original Adobe Director
 movies in a browser and replaces the retired multiplayer service with a small
 Node.js and WebSocket server.
 
+**[Play Gut Feel in your browser →](https://gutfeel.atzy.dev/)**
+
 The browser-ready movies, manuals, artwork, audio, and report assets are
 included so a checkout can run the complete game. They retain their original
 copyright and are not covered by the browser project's GPL licence.
+
+## Screenshots
+
+[![Gut Feel multiplayer lobby](.github/assets/home.png)](https://gutfeel.atzy.dev/)
+
+<p align="center">
+  <img src=".github/assets/about.png" width="49%" alt="The story behind the Gut Feel browser preservation">
+  <img src=".github/assets/reporter.png" width="49%" alt="The Gut Feel browser report viewer">
+</p>
 
 ## Requirements
 
