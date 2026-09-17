@@ -80,6 +80,20 @@ it from the container-bound request.
 
 ## Docker
 
+On `tinymart`, the checked-in home deployment binds the service to loopback so
+only the existing Cloudflare Tunnel can reach it:
+
+```sh
+docker compose -f compose.home.yml up -d --build
+docker compose -f compose.home.yml ps
+curl -fsS http://127.0.0.1:4173/health
+```
+
+The host's `atzy-dev` tunnel routes `gutfeel.atzy.dev` to
+`http://127.0.0.1:4173`. The container drops Linux capabilities, uses a
+read-only root filesystem, runs as the unprivileged image user, and retains
+only bounded local logs.
+
 ```sh
 docker build -t gutfeel .
 docker run --rm --name gutfeel \

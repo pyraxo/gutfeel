@@ -1,0 +1,31 @@
+services:
+  gutfeel:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gutfeel
+    restart: unless-stopped
+    init: true
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: "4173"
+      PUBLIC_ORIGIN: https://gutfeel.atzy.dev
+      SOURCE_CODE_URL: https://github.com/pyraxo/gutfeel
+      TRUST_CLOUDFLARE_CONNECTING_IP: "1"
+    ports:
+      - 127.0.0.1:4173:4173
+    mem_limit: 1g
+    cpus: 1.0
+    logging:
+      driver: local
+      options:
+        max-size: 10m
+        max-file: "3"

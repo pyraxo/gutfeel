@@ -56,7 +56,8 @@ export function clientAddress(
   const peer = normalizeAddress(request.socket?.remoteAddress) || "unknown";
   if (trustCloudflareConnectingIp) {
     const cloudflareAddress = normalizeAddress(
-      request.headers?.["x-gutfeel-client-ip"],
+      request.headers?.["x-gutfeel-client-ip"] ??
+        request.headers?.["cf-connecting-ip"],
     );
     if (cloudflareAddress) return cloudflareAddress;
   }

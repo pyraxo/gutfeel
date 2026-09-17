@@ -88,6 +88,13 @@ test("forwarded client addresses are used only behind explicitly trusted peers",
     "203.0.113.7",
   );
   assert.equal(
+    clientAddress({
+      socket: { remoteAddress: "127.0.0.1" },
+      headers: { "cf-connecting-ip": "203.0.113.8" },
+    }, new Set(), true),
+    "203.0.113.8",
+  );
+  assert.equal(
     serverConfiguration({}, {
       TRUST_CLOUDFLARE_CONNECTING_IP: "1",
     }).trustCloudflareConnectingIp,
