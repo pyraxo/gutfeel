@@ -13,11 +13,11 @@ copyright and are not covered by the browser project's GPL licence.
 
 ## Screenshots
 
-[![Gut Feel multiplayer lobby](.github/assets/home.png)](https://gutfeel.atzy.dev/)
+[![The original Gut Feel game running in the browser](.github/assets/game-boot.png)](https://gutfeel.atzy.dev/?mode=tutorial)
 
 <p align="center">
+  <img src=".github/assets/home.png" width="49%" alt="The Gut Feel multiplayer lobby">
   <img src=".github/assets/about.png" width="49%" alt="The story behind the Gut Feel browser preservation">
-  <img src=".github/assets/reporter.png" width="49%" alt="The Gut Feel browser report viewer">
 </p>
 
 ## Requirements
