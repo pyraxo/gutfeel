@@ -12,6 +12,9 @@ test('serves the shell and rejects traversal/sibling paths', async t => {
   const page = await fetch(`${base}/`);
   assert.equal(page.status, 200);
   assert.match(page.headers.get('content-type'), /text\/html/);
+  assert.equal(page.headers.get('strict-transport-security'), 'max-age=31536000; includeSubDomains');
+  assert.equal(page.headers.get('referrer-policy'), 'no-referrer');
+  assert.equal(page.headers.get('x-frame-options'), 'SAMEORIGIN');
   assert.match(await page.text(), /Gut Feel/);
   const head = await fetch(`${base}/shell.js`, { method: 'HEAD' });
   assert.equal(head.status, 200);

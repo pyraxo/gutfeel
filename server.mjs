@@ -10,6 +10,7 @@ import {clientAddress,serverConfiguration} from './server/config.mjs';
 const root = path.resolve(fileURLToPath(new URL('./web/public/',import.meta.url)));
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.json':'application/json','.wasm':'application/wasm','.png':'image/png','.jpg':'image/jpeg','.svg':'image/svg+xml','.css':'text/css','.pdf':'application/pdf','.mp3':'audio/mpeg','.wav':'audio/wav','.dir':'application/x-director','.dxr':'application/x-director','.dcr':'application/x-director'};
 const compressible=new Set(['.dir','.dcr','.js','.json','.css','.html','.mjs','.wasm','.svg']);
+const browserSecurityHeaders={'Strict-Transport-Security':'max-age=31536000; includeSubDomains','Referrer-Policy':'no-referrer','Permissions-Policy':'camera=(), microphone=(), geolocation=()','X-Frame-Options':'SAMEORIGIN'};
 const acceptsGzip=header=>{let wildcard=false;for(const part of String(header||'').toLowerCase().split(',')){const [encoding,...params]=part.trim().split(';');const q=Number((params.find(p=>p.trim().startsWith('q='))||'q=1').trim().slice(2));if(encoding==='gzip')return q>0;if(encoding==='*')wildcard=q>0;}return wildcard;};
 const lingoString=value=>'"'+String(value).replace(/["\r\n\x00]/g,'').slice(0,100)+'"';
 const json=(res,status,value)=>res.writeHead(status,{'Content-Type':'application/json','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}).end(JSON.stringify(value));
@@ -37,6 +38,7 @@ export function createGutFeelServer(options={}){
   }
  };
  const server=createServer(async(req,res)=>{
+  for(const [header,value] of Object.entries(browserSecurityHeaders))res.setHeader(header,value);
   let url,pathname;
   try {url=new URL(req.url,'http://localhost');pathname=decodeURIComponent(url.pathname);}catch {res.writeHead(400).end();return;}
   if(pathname==='/source'){
