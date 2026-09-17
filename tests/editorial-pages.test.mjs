@@ -34,4 +34,17 @@ test('legal page separates original rights from project and third-party licences
   assert.match(legal, /Ruffle/);
   assert.match(legal, /ws 8\.21\.3/);
   assert.match(legal, /Bricolage Grotesque/);
+  assert.match(legal, /Anonymous usage analytics/);
+  assert.match(legal, /Query strings are excluded/);
+});
+
+test('public pages use the privacy-limited self-hosted analytics tracker', async () => {
+  for (const name of ['index.html', 'about.html', 'technical.html', 'legal.html', 'report.html']) {
+    const page = await readFile(publicFile(name), 'utf8');
+    assert.match(page, /src="https:\/\/umami\.atzy\.dev\/telemetry\.js"/, `${name} is missing the tracker`);
+    assert.match(page, /data-website-id="[0-9a-f-]{36}"/);
+    assert.match(page, /data-domains="gutfeel\.atzy\.dev"/);
+    assert.match(page, /data-exclude-search="true"/);
+    assert.match(page, /data-do-not-track="true"/);
+  }
 });
