@@ -8,7 +8,7 @@ import {attachMultiuser,MultiuserRelay} from './server/multiuser.mjs';
 import {LobbyRegistry} from './server/lobbies.mjs';
 import {clientAddress,serverConfiguration} from './server/config.mjs';
 const root = path.resolve(fileURLToPath(new URL('./web/public/',import.meta.url)));
-const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.json':'application/json','.wasm':'application/wasm','.png':'image/png','.jpg':'image/jpeg','.svg':'image/svg+xml','.css':'text/css','.pdf':'application/pdf','.mp3':'audio/mpeg','.wav':'audio/wav','.dir':'application/x-director','.dxr':'application/x-director','.dcr':'application/x-director'};
+const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.json':'application/json','.webmanifest':'application/manifest+json','.xml':'application/xml; charset=utf-8','.txt':'text/plain; charset=utf-8','.wasm':'application/wasm','.png':'image/png','.jpg':'image/jpeg','.svg':'image/svg+xml','.css':'text/css','.pdf':'application/pdf','.mp3':'audio/mpeg','.wav':'audio/wav','.dir':'application/x-director','.dxr':'application/x-director','.dcr':'application/x-director'};
 const compressible=new Set(['.dir','.dcr','.js','.json','.css','.html','.mjs','.wasm','.svg']);
 const immutableAssetPrefixes=['/movies/','/manuals/','/report-assets/'];
 const browserSecurityHeaders={'Strict-Transport-Security':'max-age=31536000; includeSubDomains','Referrer-Policy':'no-referrer','Permissions-Policy':'camera=(), microphone=(), geolocation=()','X-Frame-Options':'SAMEORIGIN'};

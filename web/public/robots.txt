@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /host-agent.html
+Disallow: /api/
+Disallow: /legacy/
+Disallow: /multiuser
+
+Sitemap: https://gutfeel.atzy.dev/sitemap.xml

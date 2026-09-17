@@ -1,0 +1,18 @@
+{
+  "name": "Gut Feel · Browser Edition",
+  "short_name": "Gut Feel",
+  "description": "An unofficial browser preservation of Amdon's 2009 multiplayer educational game.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f5efdf",
+  "theme_color": "#31439d",
+  "icons": [
+    {
+      "src": "/report-assets/icon.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
