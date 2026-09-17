@@ -10,6 +10,7 @@ import {clientAddress,serverConfiguration} from './server/config.mjs';
 const root = path.resolve(fileURLToPath(new URL('./web/public/',import.meta.url)));
 const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.json':'application/json','.wasm':'application/wasm','.png':'image/png','.jpg':'image/jpeg','.svg':'image/svg+xml','.css':'text/css','.pdf':'application/pdf','.mp3':'audio/mpeg','.wav':'audio/wav','.dir':'application/x-director','.dxr':'application/x-director','.dcr':'application/x-director'};
 const compressible=new Set(['.dir','.dcr','.js','.json','.css','.html','.mjs','.wasm','.svg']);
+const immutableAssetPrefixes=['/movies/','/manuals/','/report-assets/'];
 const browserSecurityHeaders={'Strict-Transport-Security':'max-age=31536000; includeSubDomains','Referrer-Policy':'no-referrer','Permissions-Policy':'camera=(), microphone=(), geolocation=()','X-Frame-Options':'SAMEORIGIN'};
 const acceptsGzip=header=>{let wildcard=false;for(const part of String(header||'').toLowerCase().split(',')){const [encoding,...params]=part.trim().split(';');const q=Number((params.find(p=>p.trim().startsWith('q='))||'q=1').trim().slice(2));if(encoding==='gzip')return q>0;if(encoding==='*')wildcard=q>0;}return wildcard;};
 const lingoString=value=>'"'+String(value).replace(/["\r\n\x00]/g,'').slice(0,100)+'"';
@@ -106,7 +107,8 @@ export function createGutFeelServer(options={}){
   if((file!==root&&!file.startsWith(root+path.sep))||pathname.includes('\0')||!existsSync(file)||!statSync(file).isFile()){res.writeHead(404).end('Not found');return;}
  const stat=statSync(file);
   const accepts=acceptsGzip(req.headers['accept-encoding']);
-  const headers={'Content-Type':mime[path.extname(file)]||'application/octet-stream','Cache-Control':'no-cache','X-Content-Type-Options':'nosniff','Vary':'Accept-Encoding'};
+  const immutableAsset=immutableAssetPrefixes.some(prefix=>pathname.startsWith(prefix));
+  const headers={'Content-Type':mime[path.extname(file)]||'application/octet-stream','Cache-Control':immutableAsset?'public, max-age=31536000, immutable':'no-cache','X-Content-Type-Options':'nosniff','Vary':'Accept-Encoding'};
   if(accepts&&compressible.has(path.extname(file).toLowerCase())) headers['Content-Encoding']='gzip'; else headers['Content-Length']=stat.size;
   res.writeHead(200,headers);
   if(req.method==='HEAD')res.end();else {const stream=createReadStream(file); if(headers['Content-Encoding']) pipeline(stream,createGzip({level:6}),res,()=>{}); else pipeline(stream,res,()=>{});}

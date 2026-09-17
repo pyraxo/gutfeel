@@ -31,6 +31,9 @@ test('serves the shell and rejects traversal/sibling paths', async t => {
   const localSource = await fetch(`${base}/source`);
   assert.equal(localSource.status, 200);
   assert.match(await localSource.text(), /this development working tree/);
+  const movie = await fetch(`${base}/movies/client/main.dir`, { method: 'HEAD' });
+  assert.equal(movie.status, 200);
+  assert.equal(movie.headers.get('cache-control'), 'public, max-age=31536000, immutable');
   const original=await (await fetch(`${base}/shell.js`,{headers:{'accept-encoding':'identity'}})).text();
   const compressed=await new Promise((resolve,reject)=>{request(`${base}/shell.js`,{headers:{'accept-encoding':'gzip'}},res=>{const chunks=[];res.on('data',c=>chunks.push(c));res.on('end',()=>resolve({res,body:Buffer.concat(chunks)}));}).on('error',reject).end()});
   assert.equal(compressed.res.headers['content-encoding'],'gzip'); assert.equal(compressed.res.headers.vary,'Accept-Encoding'); assert.equal(gunzipSync(compressed.body).toString(),original);
