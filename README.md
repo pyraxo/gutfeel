@@ -33,20 +33,18 @@ Open <http://localhost:4173>.
 
 ## Deploy
 
-The production target is a single Cloudflare Container behind a Worker at
-`gutfeel.atzy.dev`. Docker must be running locally for Wrangler to build the
-container image:
+The production deployment runs one Docker container on `tinymart`, bound only
+to loopback and published through the host's existing Cloudflare Tunnel:
 
 ```sh
-npx wrangler login
-npm run cloudflare:check
-npm run cloudflare:deploy
+git pull --ff-only
+docker compose -f compose.home.yml up -d --build
+curl -fsS http://127.0.0.1:4173/health
 ```
 
-Wrangler creates the custom domain and certificate. The Worker routes every
-request to one APAC container so all lobby and WebSocket state remains in the
-same Node process. See [docs/SELF_HOSTING.md](docs/SELF_HOSTING.md) for setup,
-security, verification, and operational details.
+The `atzy-dev` tunnel routes `gutfeel.atzy.dev` to the loopback listener. See
+[docs/SELF_HOSTING.md](docs/SELF_HOSTING.md) for setup, security, verification,
+and operational details.
 
 The Docker image can also run on any single-instance container host. A public
 deployment requires the exact browser origin and a link to the Corresponding
