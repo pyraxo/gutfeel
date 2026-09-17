@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171916">
+  <title>GutFeel Reporter</title>
+  <link rel="stylesheet" href="report.css">
+</head>
+<body>
+  <header class="app-bar">
+    <a class="brand" href="report.html" aria-label="GutFeel Reporter home">
+      <img src="report-assets/icon.png" alt="">
+      <span>GutFeel Reporter</span>
+      <small>v1.0 browser edition</small>
+    </a>
+    <div class="app-actions">
+      <label class="button button-primary" for="report-file">Open AMR or ZIP</label>
+      <input id="report-file" type="file" accept=".amr,.zip,application/xml,text/xml,application/zip">
+      <button id="print-report" class="button" type="button" disabled>Print / Save PDF</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="drop-zone" class="drop-zone" tabindex="0" aria-labelledby="drop-title">
+      <img src="report-assets/anatomy.png" alt="Digestive system control rooms from Gut Feel">
+      <div class="drop-copy">
+        <p class="eyebrow">Original report format</p>
+        <h1 id="drop-title">Drop a Gut Feel <code>.amr</code> report here</h1>
+        <p>The reporter reads the Host’s original XML schema, including scenarios, groups, players, room scores, food choices, crises, and projection values.</p>
+        <label class="button button-primary" for="report-file">Choose report</label>
+        <p class="drop-note">The file stays in your browser. A Host-generated <code>Report.zip</code> is accepted too.</p>
+      </div>
+    </section>
+
+    <p id="error-message" class="error-message" role="alert" hidden></p>
+
+    <div id="report-view" class="report-view" hidden>
+      <section class="host-strip" aria-label="Report metadata">
+        <div><span>Host</span><strong id="host-name">—</strong></div>
+        <div><span>Total students</span><strong id="host-total">—</strong></div>
+        <div><span>Time</span><strong id="host-time">—</strong></div>
+        <div><span>Created on</span><strong id="host-date">—</strong></div>
+        <div><span>Source</span><strong id="source-name">—</strong></div>
+      </section>
+
+      <div class="report-shell">
+        <aside class="session-rail" aria-label="Scenarios and groups">
+          <p class="eyebrow">Sessions</p>
+          <nav id="session-list"></nav>
+        </aside>
+
+        <article class="session-report">
+          <header class="session-heading">
+            <div>
+              <p id="scenario-name" class="eyebrow">Scenario</p>
+              <h2 id="group-name">Group</h2>
+              <p id="players" class="players">—</p>
+            </div>
+            <dl class="score-board">
+              <div><dt>Final score</dt><dd id="final-score">—</dd></div>
+              <div><dt>Burger bonus</dt><dd id="burger-bonus">—</dd></div>
+              <div><dt>Starting score</dt><dd id="starting-score">—</dd></div>
+              <div><dt>Wastage meter</dt><dd id="wastage-score">—</dd></div>
+            </dl>
+          </header>
+
+          <nav class="report-tabs" aria-label="Report sections">
+            <button type="button" data-tab="objective" aria-selected="true">Absorption</button>
+            <button type="button" data-tab="mechanical">Mechanical</button>
+            <button type="button" data-tab="chemical">Chemical</button>
+            <button type="button" data-tab="projection">Projection</button>
+            <button type="button" data-tab="crisis">Crisis</button>
+          </nav>
+
+          <section id="tab-objective" class="tab-panel" data-panel="objective">
+            <div class="panel-heading">
+              <p class="eyebrow">Nutrition objective · blocks</p>
+              <h3>Absorbed, eaten, recommended</h3>
+            </div>
+            <div id="nutrient-chart" class="nutrient-chart"></div>
+            <div id="food-choices" class="food-choices"></div>
+          </section>
+
+          <section id="tab-mechanical" class="tab-panel" data-panel="mechanical" hidden>
+            <div class="panel-heading">
+              <p class="eyebrow">Mechanical digestion</p>
+              <h3>Control-room performance</h3>
+            </div>
+            <div id="mechanical-rooms" class="room-grid"></div>
+          </section>
+
+          <section id="tab-chemical" class="tab-panel" data-panel="chemical" hidden>
+            <div class="panel-heading">
+              <p class="eyebrow">Chemical digestion</p>
+              <h3>Enzymes and absorption</h3>
+            </div>
+            <div id="chemical-rooms" class="room-grid"></div>
+          </section>
+
+          <section id="tab-projection" class="tab-panel" data-panel="projection" hidden>
+            <div class="panel-heading">
+              <p class="eyebrow">Projection</p>
+              <h3>Daily calorie intake</h3>
+            </div>
+            <div class="projection-grid">
+              <div><span>Recommended daily intake</span><strong id="recommended-intake">—</strong></div>
+              <div><span>Total calorie intake</span><strong id="calorie-intake">—</strong></div>
+            </div>
+            <p id="calorie-audit" class="formula-note"></p>
+          </section>
+
+          <section id="tab-crisis" class="tab-panel" data-panel="crisis" hidden>
+            <div class="panel-heading">
+              <p class="eyebrow">Crisis log</p>
+              <h3>Events faced by this group</h3>
+            </div>
+            <ol id="crisis-list" class="crisis-list"></ol>
+          </section>
+        </article>
+      </div>
+    </div>
+    <section id="print-report-pages" class="print-report-pages" aria-hidden="true"></section>
+  </main>
+
+  <footer>
+    <span>Unofficial browser viewer. Original report format and materials © 2009 Amdon Consulting Pte Ltd.</span>
+    <span><a href="legal.html">Legal and attributions</a> · <a href="/source">Corresponding source</a></span>
+  </footer>
+  <script src="report.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# Keep generated/upstream artifacts from distorting GitHub language statistics.
+web/public/runtime/** linguist-vendored=true
+recovered/runtime.patch linguist-generated=true -whitespace
+
+# Treat compiled and media formats as binary.
+*.wasm binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.exe binary
+*.dcr binary
+*.dir binary
+*.amd binary
+*.ttf binary
+*.zip binary

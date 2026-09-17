@@ -1,0 +1,29 @@
+Gut Feel browser project licence
+
+Copyright (C) 2026 pyraxo and contributors
+
+SPDX-License-Identifier: GPL-3.0-only
+
+The source code and documentation created for this browser compatibility
+project are licensed under the GNU General Public License, version 3 only,
+except where a file or directory states a different licence. You may copy,
+modify, and redistribute that project-owned material under GPL-3.0-only.
+
+The complete GNU GPL version 3 text is included at:
+
+    web/public/runtime/LICENSE
+
+This licence grant does not cover the original Gut Feel game or any original
+or recovered game material, including its name, logos, manuals, artwork,
+audio, movies, Lingo code, report assets, fonts, or other content. Those
+materials remain the property of their respective rights holders. No
+permission to copy, distribute, publicly perform, communicate, or adapt those
+materials is granted by this repository.
+
+Third-party components retain their own licences. See
+THIRD_PARTY_NOTICES.md and the licence files stored with those components.
+
+To the extent that a repository file contains facts, interfaces, identifiers,
+or other material originating in Gut Feel, this licence applies only to the
+copyright interests, if any, held by the browser-project contributors. It does
+not purport to relicense third-party material.

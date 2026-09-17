@@ -1,0 +1,21 @@
+{
+  "project": "DirPlayer",
+  "source": "https://github.com/igorlira/dirplayer-rs",
+  "commit": "68376fbb4494a6bbad4c70081ecdcb99814a74c9",
+  "license": "GPL-3.0-only",
+  "runtime": "dirplayer-polyfill.js",
+  "releaseWasm": {
+    "bytes": 9886520,
+    "sha256": "8c4b1689fa3b671f25805449d3083c38c92a4bfb2069c893b9614638e297f128"
+  },
+  "releasePolyfill": {
+    "bytes": 17964858,
+    "sha256": "f493af4885b35af9a17c5160d8de221e95527e2fe58c7bfb68820c5a4323d839"
+  },
+  "ruffle": {
+    "licenseFiles": [
+      "ruffle/LICENSE_APACHE",
+      "ruffle/LICENSE_MIT"
+    ]
+  }
+}

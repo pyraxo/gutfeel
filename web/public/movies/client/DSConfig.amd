@@ -1,0 +1,148 @@
+[Config]
+
+*************************************** FOOD AVAILABLE ********************************************
+
+[Food]
+Foodnames = ["biscuit","jawbreaker","apple","bakedBeans","friedEgg","Chocolate","muesliBar","StrawberryYoghurt","banana","fries","BowlOfnoodle","BowlOfrice","Veg","chickenCurry","fish","burger"]
+
+
+fish=[#waveNum:4, #MinBites : 4, #MemName:"Fish",#FdName:"fish",#FoodBiteType:"BiteSize",#FoodBiteNum:1,#Carbo:0,#protein:90,#fats:10,#nutrients:5,#fibre:0,#minerals:15,#water:0,#SalivaLvl:0,#HardnessLvl:100,#FdHardnessValue:400]
+
+Veg=[#waveNum:8, #MinBites : 5, #MemName:"Vegetables",#FdName:"Veg",#FoodBiteType:"Bowls",#FoodBiteNum:1,#Carbo:40,#protein:20,#fats:40,#nutrients:80,#fibre:20,#minerals:20,#water:0,#SalivaLvl:0,#HardnessLvl:100,#FdHardnessValue:450]
+
+burger= [#waveNum:8, #MinBites :9, #MemName:"Burger",#FdName:"burger",#FoodBiteType:"BiteSize",#FoodBiteNum:1,#Carbo:40,#protein:20,#fats:40,#nutrients:5,#fibre:5,#minerals:15,#water:0,#SalivaLvl:0,#HardnessLvl:100,#FdHardnessValue:900]
+
+BowlOfrice=[#waveNum:4, #MinBites : 5, #MemName:"A bowl of rice",#FdName:"BowlOfrice",#FoodBiteType:"BiteSize",#FoodBiteNum:1,#Carbo:100,#protein:0,#fats:0,#nutrients:0,#fibre:0,#minerals:5,#water:100,#SalivaLvl:0,#HardnessLvl:100,#FdHardnessValue:500]
+
+chickenCurry=[#waveNum:8, #MinBites : 9, #MemName:"Chicken Curry",#FdName:"chickenCurry",#FoodBiteType:"BiteSize",#FoodBiteNum:1,#Carbo:20,#protein:20,#fats:60,#nutrients:5,#fibre:10,#minerals:10,#water:0,#SalivaLvl:0,#HardnessLvl:100,#FdHardnessValue:850]
+
+StrawberryYoghurt=[#waveNum:4, #MinBites : 1, #MemName:"Strawberry yoghurt",#FdName:"StrawberryYoghurt",#FoodBiteType:"BiteSize",#FoodBiteNum:1,#Carbo:100,#protein:0,#fats:0,#nutrients:0,#fibre:0,#minerals:5,#water:100,#SalivaLvl:0,#HardnessLvl:0,#FdHardnessValue:50]
+
+fries=[#waveNum:4, #MinBites : 4, #MemName:"Fries",#FdName:"fries",#FoodBiteType:"BiteSize",#FoodBiteNum:1,#Carbo:50,#protein:5,#fats:45,#nutrients:10,#fibre:10,#minerals:5,#water:0,#SalivaLvl:0,#HardnessLvl:100,#FdHardnessValue:400]
+
+BowlofNoodle=[#waveNum:4, #MinBites : 5, #MemName:"A bowl of noodles",#FdName:"BowlOfnoodle",#FoodBiteType:"BiteSize",#FoodBiteNum:1,#Carbo:100,#protein:0,#fats:0,#nutrients:0,#fibre:0,#minerals:5,#water:100,#SalivaLvl:0,#HardnessLvl:100,#FdHardnessValue:500]
+
+muesliBar=[#waveNum:2, #MinBites : 9, #MemName:"Muesli bar",#FdName:"muesliBar",#FoodBiteType:"BiteSize",#FoodBiteNum:1,#Carbo:100,#protein:0,#fats:0,#nutrients:0,#fibre:0,#minerals:5,#water:100,#SalivaLvl:0,#HardnessLvl:100,#FdHardnessValue:850]
+
+Chocolate=[#waveNum:2, #MinBites : 7, #MemName:"Chocolate",#FdName:"Chocolate",#FoodBiteType:"BiteSize",#FoodBiteNum:1,#Carbo:70,#protein:5,#fats:25,#nutrients:0,#fibre:5,#minerals:20,#water:0,#SalivaLvl:0,#HardnessLvl:100,#FdHardnessValue:700]
+
+banana=[#waveNum:2, #MinBites : 3, #MemName:"Banana",#FdName:"banana",#FoodBiteType:"BiteSize",#FoodBiteNum:1,#Carbo:90,#protein:5,#fats:5,#nutrients:35,#fibre:20,#minerals:10,#water:0,#SalivaLvl:0,#HardnessLvl:100,#FdHardnessValue:300]
+
+friedEgg=[#waveNum:2, #MinBites : 2, #MemName:"Fried egg",#FdName:"friedEgg",#FoodBiteType:"BiteSize",#FoodBiteNum:1,#Carbo:100,#protein:0,#fats:0,#nutrients:0,#fibre:0,#minerals:5,#water:100,#SalivaLvl:0,#HardnessLvl:100,#FdHardnessValue:200]
+
+bakedBeans=[#waveNum:2, #MinBites : 4, #MemName:"Baked beans",#FdName:"bakedBeans",#FoodBiteType:"BiteSize",#FoodBiteNum:1,#Carbo:100,#protein:0,#fats:0,#nutrients:0,#fibre:0,#minerals:5,#water:100,#SalivaLvl:0,#HardnessLvl:100,#FdHardnessValue:350]
+
+apple=[#waveNum:1, #MinBites : 8, #MemName:"Apple",#FdName:"apple",#FoodBiteType:"BiteSize",#FoodBiteNum:1,#Carbo:100,#protein:0,#fats:0,#nutrients:0,#fibre:0,#minerals:5,#water:100,#SalivaLvl:0,#HardnessLvl:100,#FdHardnessValue:800]
+
+jawbreaker=[#waveNum:1, #MinBites : 10, #MemName:"Jawbreaker",#FdName:"jawbreaker",#FoodBiteType:"BiteSize",#FoodBiteNum:1,#Carbo:100,#protein:0,#fats:0,#nutrients:0,#fibre:0,#minerals:5,#water:100,#SalivaLvl:0,#HardnessLvl:100,#FdHardnessValue:1000]
+
+biscuit=[#waveNum:1, #MinBites : 6, #MemName:"Biscuit",#FdName:"biscuit",#FoodBiteType:"BiteSize",#FoodBiteNum:1,#Carbo:45,#protein:10,#fats:45,#nutrients:0,#fibre:0,#minerals:10,#water:0,#SalivaLvl:0,#HardnessLvl:100,#FdHardnessValue:600]
+
+milk=[#waveNum:8, #MinBites : 0, #MemName:"Fresh milk",#FdName:"milk",#FoodBiteType:"Gulps",#FoodBiteNum:1,#Carbo:30,#protein:20,#fats:50,#nutrients:10,#fibre:0,#minerals:50,#water:0,#SalivaLvl:0,#HardnessLvl:100,#FdHardnessValue:0]
+
+water=[#waveNum:8, #MinBites : 0, #MemName:"Water",#FdName:"water",#FoodBiteType:"Gulps",#FoodBiteNum:1,#Carbo:100,#protein:0,#fats:0,#nutrients:0,#fibre:0,#minerals:5,#water:100,#SalivaLvl:0,#HardnessLvl:100,#FdHardnessValue:0]
+
+
+***************************************************************** THE PREDEFINED SCENARIOS *******************************************************************
+
+[Scenarios]
+
+Foodpanel_Normal=[[#Burger,#Fish],[#Banana,#Chocolate],[#Veg,#Fries],[#ChickenCurry,#friedEgg],[#BowlOfrice,#BowlofNoodle],[#apple,#StrawberryYoghurt],[#muesliBar,#jawbreaker],[#Biscuit,#bakedbeans],[#none,#none]]
+FdPortions_Normal=[[5,5],[5,5],[5,5],[5,5],[5,5],[5,5],[5,5],[5,5],[0,0]]
+
+Foodpanel_Army=[[#Burger,#Fish],[#Banana,#Chocolate],[#Veg,#Fries],[#ChickenCurry,#friedEgg],[#BowlOfrice,#BowlofNoodle],[#apple,#StrawberryYoghurt],[#muesliBar,#jawbreaker],[#Biscuit,#bakedbeans],[#none,#none]]
+FdPortions_Army=[[5,5],[5,5],[5,5],[5,5],[5,5],[5,5],[5,5],[5,5],[0,0]]
+
+Foodpanel_Competition=[[#Burger,#none],[#none,#none],[#none,#none],[#none,#none],[#none,#none],[#none,#none],[#none,#none],[#none,#none],[#none,#none]]
+FdPortions_Competition=[[20,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]
+
+Normal=[[#CPFTarget:[#Carbo:96,#fats:24,#protein:24,#fibre:0,#water:0]],[#ProjectionTimeSpan:1]]
+Army=[[#CPFTarget:[#Carbo:100,#fats:18,#protein:50,#fibre:0,#water:100]],[#ProjectionTimeSpan:9]]
+Competition=[[#CPFTarget:[#Carbo:60,#fats:18,#protein:14,#fibre:0,#water:100]],[#ProjectionTimeSpan:0]]
+
+
+
+
+***************************************************************** THE CPF Percentages *******************************************************************
+
+[CPFPercentage]
+
+-----8 waves:
+Foodnames = ["biscuit","jawbreaker","apple","bakedBeans","friedEgg","Chocolate","muesliBar","StrawberryYoghurt","banana","fries","BowlOfnoodle","BowlOfrice","Veg","chickenCurry","fish","burger","water", "milk"]
+
+biscuit=[#NumSequence:30, #MinBites:6 , #FdHardnessValue:600, #FoodMatrix:[#Carbo:3,#fats:2,#protein:1,#fibre:2,#water:0],#Grams:[#Carbo:9,#fats:6,#protein:3,#fibre:6,#water:0]]
+
+jawbreaker = [#NumSequence:30, #MinBites:10, #FdHardnessValue:1000, #FoodMatrix:[#Carbo:8,#fats:0,#protein:0,#fibre:0,#water:0],#Grams:[#Carbo:24,#fats:0,#protein:0,#fibre:0,#water:0]]
+
+apple=[#NumSequence:10, #MinBites:8 , #FdHardnessValue:800, #FoodMatrix:[#Carbo:2,#fats:0,#protein:0,#fibre:1,#water:5],#Grams:[#Carbo:6,#fats:0,#protein:0,#fibre:3,#water:15]]
+
+
+-----16 waves:
+bakedBeans=[#NumSequence:15, #MinBites :4 , #FdHardnessValue:350, #FoodMatrix:[#Carbo:3,#fats:0,#protein:1,#fibre:1,#water:11],#Grams:[#Carbo:9,#fats:0,#protein:3,#fibre:3,#water:33]]
+
+friedEgg=[#NumSequence:10, #MinBites :2 , #FdHardnessValue:200, #FoodMatrix:[#Carbo:0,#fats:2,#protein:2,#fibre:0,#water:12],#Grams:[#Carbo:0,#fats:6,#protein:6,#fibre:0,#water:36]]
+
+Chocolate=[#NumSequence:25, #MinBites :7 , #FdHardnessValue:700, #FoodMatrix:[#Carbo:9,#fats:5,#protein:1,#fibre:0,#water:1],#Grams:[#Carbo:27,#fats:15,#protein:3,#fibre:0,#water:3]]
+
+muesliBar=[#NumSequence:25, #MinBites :9 , #FdHardnessValue:850, #FoodMatrix:[#Carbo:11,#fats:1,#protein:3,#fibre:1,#water:0],#Grams:[#Carbo:33,#fats:3,#protein:9,#fibre:3,#water:0]]
+
+banana= [#NumSequence:20, #MinBites :3 , #FdHardnessValue:300, #FoodMatrix:[#Carbo:6,#fats:0,#protein:0,#fibre:3,#water:7],#Grams:[#Carbo:18,#fats:0,#protein:0,#fibre:9,#water:21]]
+
+
+-----32 waves:
+StrawberryYoghurt=[#NumSequence:10, #MinBites :1 , #FdHardnessValue:50, #FoodMatrix:[#Carbo:6,#fats:0,#protein:1,#fibre:0,#water:25],#Grams:[#Carbo:18,#fats:0,#protein:3,#fibre:0,#water:75]]
+
+fries= [#NumSequence:25, #MinBites :4 , #FdHardnessValue:400, #FoodMatrix:[#Carbo:12,#fats:8,#protein:1,#fibre:1,#water:10],#Grams:[#Carbo:36,#fats:24,#protein:3,#fibre:3,#water:30]]
+
+bowlofnoodle=[#NumSequence:15, #MinBites :5 , #FdHardnessValue:500, #FoodMatrix:[#Carbo:15,#fats:5,#protein:3,#fibre:2,#water:7],#Grams:[#Carbo:45,#fats:15,#protein:9,#fibre:6,#water:21]]
+
+bowlofrice=[#NumSequence:20, #MinBites :5 , #FdHardnessValue:500, #FoodMatrix:[#Carbo:25,#fats:0,#protein:2,#fibre:1,#water:4],#Grams:[#Carbo:75,#fats:0,#protein:6,#fibre:3,#water:12]]
+
+fish=[#NumSequence:10, #MinBites :4 , #FdHardnessValue:400, #FoodMatrix:[#Carbo:0,#fats:2,#protein:10,#fibre:0,#water:20],#Grams:[#Carbo:0,#fats:6,#protein:30,#fibre:0,#water:60]]
+
+
+------64 waves:
+Veg=[#NumSequence:15, #MinBites :5 , #FdHardnessValue:450, #FoodMatrix:[#Carbo:13,#fats:1,#protein:4,#fibre:10,#water:36],#Grams:[#Carbo:39,#fats:3,#protein:12,#fibre:30,#water:108]]
+
+chickenCurry=[#NumSequence:15, #MinBites :9 , #FdHardnessValue:850, #FoodMatrix:[#Carbo:6,#fats:7,#protein:11,#fibre:2,#water:38],#Grams:[#Carbo:18,#fats:21,#protein:33,#fibre:6,#water:114]]
+
+burger= [#NumSequence:25, #MinBites :9 , #FdHardnessValue:900, #FoodMatrix:[#Carbo:20,#fats:10,#protein:8,#fibre:2,#water:24],#Grams:[#Carbo:60,#fats:30,#protein:24,#fibre:6,#water:72]]
+
+
+
+water=[#NumSequence:0, #MinBites :0 , #FdHardnessValue:0, #FoodMatrix:[#Carbo:0,#fats:0,#protein:0,#fibre:0,#water:64],#Grams:[#Carbo:0,#fats:0,#protein:0,#fibre:0,#water:320]]
+
+milk=[#NumSequence:0, #MinBites :0 , #FdHardnessValue:0, #FoodMatrix:[#Carbo:5,#fats:2,#protein:4,#fibre:0,#water:53],#Grams:[#Carbo:15,#fats:6,#protein:12,#fibre:0,#water:159]]
+
+
+
+
+***************************************************************** THE SCORES *******************************************************************
+
+[Score]
+
+---the number of points that player starts game with:
+plPoints = 0
+
+
+
+MinBites = [#biscuit:6, #jawbreaker:10, #apple:8, #bakedBeans:5, #friedEgg:4, #Chocolate:8, #muesliBar:9, #strawberryyoghurt:1, #banana:4, #fries:3, #bowlofnoodle:6, #bowlofrice:6, #Veg:9, #chickenCurry:10, #fish:6, #burger:10, #water:0, #milk:0]
+
+
+
+pPuncherScore = [#DigPunchCorrect:+10, #DigPunchWrong:+1, #DigNotPunch:-5, #UndigPunchWrong:-5, #DigPunchWrongAbsorbedWrong:-5]
+
+
+
+
+-----plCPFLevel = [#Normal:[#Projected:[#Carbo:0,#fats:0,#protein:0,#fibre:0,#water:0], #Achieved:[#Carbo:0,#fats:0,#protein:0,#fibre:0,#water:0]], #Army:[#Projected:[#Carbo:0,#fats:0,#protein:0,#fibre:0,#water:0], #Achieved:[#Carbo:0,#fats:0,#protein:0,#fibre:0,#water:0]], #Competition:[#Projected:[#Carbo:0,#fats:0,#protein:0,#fibre:0,#water:0], #Achieved:[#Carbo:0,#fats:0,#protein:0,#fibre:0,#water:0]]]
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,76 @@
+{
+  "provenance": {
+    "primaryConfig": "gutfeel-installed/Client/DSConfig.amd",
+    "hostConfig": "gutfeel-installed/Host/DSConfig.amd",
+    "manual": "gutfeel-installed/Client/Gut Feel Manual.pdf",
+    "scoringGuide": "gutfeel-installed/Client/Gut Feel SCORING GUIDE.pdf",
+    "facilitationGuide": "gutfeel-installed/Host/Gut Feel Facilitation Guide.pdf",
+    "status": "Recovered values only; unknown behavior is intentionally omitted."
+  },
+  "constants": {
+    "startPoints": 0,
+    "nutrientBlockGrams": 3,
+    "nutritionTargetBlocks": { "carbo": 96, "fats": 24, "protein": 24 },
+    "nutritionKcal": { "ideal": 2100, "minimum": 1622, "maximum": 2359 },
+    "hotseatSeconds": 120,
+    "hotseatPenaltyPerSecond": -5,
+    "queueLimitBoli": 2,
+    "crisisPenaltyPerSecond": -1,
+    "stomachCapacityBoli": 1,
+    "stomachPh": { "active": 2, "resting": 4, "cooldownSeconds": 180 },
+    "enzymeLoadPerHelperTrip": 30
+  },
+  "scores": {
+    "salivaPerExposedCarbohydrate": 1,
+    "perfectOesophagusPeristalsis": 5,
+    "hclByElapsedSeconds": [
+      { "min": 1, "max": 7, "score": 8 },
+      { "min": 8, "max": 15, "score": 4 },
+      { "min": 16, "max": 25, "score": 1 },
+      { "min": 26, "max": null, "score": 0 }
+    ],
+    "churn": { "perfect": 15, "good": 10, "average": 5, "bad": 0 },
+    "turretDigestMolecule": 5,
+    "bileEmulsification": 5,
+    "enzymeMissOrWrong": -1,
+    "absorption": {
+      "fullyDigestedCorrect": 10,
+      "fullyDigestedWrongPipe": 1,
+      "fullyDigestedWaste": -5,
+      "fibreAttempt": -5,
+      "undigestedOrPartialWaste": -5,
+      "undigestedOrPartialAttempt": -10
+    },
+    "minBitesScoreTable": { "biscuit": 6, "jawbreaker": 10, "apple": 8, "bakedBeans": 5, "friedEgg": 4, "Chocolate": 8, "muesliBar": 9, "strawberryyoghurt": 1, "banana": 4, "fries": 3, "bowlofnoodle": 6, "bowlofrice": 6, "Veg": 9, "chickenCurry": 10, "fish": 6, "burger": 10, "water": 0, "milk": 0 }
+  },
+  "scenarios": {
+    "Normal": { "targetBlocks": { "carbo": 96, "fats": 24, "protein": 24, "fibre": 0, "water": 0 }, "projectionTimeSpan": 1 },
+    "Army": { "targetBlocks": { "carbo": 100, "fats": 18, "protein": 50, "fibre": 0, "water": 100 }, "projectionTimeSpan": 9 },
+    "Competition": { "targetBlocks": { "carbo": 60, "fats": 18, "protein": 14, "fibre": 0, "water": 100 }, "projectionTimeSpan": 0 }
+  },
+  "foodInventory": {
+    "Normal": [["Burger", 5], ["Fish", 5], ["Banana", 5], ["Chocolate", 5], ["Veg", 5], ["Fries", 5], ["ChickenCurry", 5], ["friedEgg", 5], ["BowlOfrice", 5], ["BowlofNoodle", 5], ["apple", 5], ["StrawberryYoghurt", 5], ["muesliBar", 5], ["jawbreaker", 5], ["Biscuit", 5], ["bakedbeans", 5]],
+    "Army": "same as Normal",
+    "Competition": [["Burger", 20]]
+  },
+  "foods": {
+    "biscuit": { "wave": 1, "sequence": 30, "minBites": 6, "hardness": 600, "grid": { "carbo": 3, "fats": 2, "protein": 1, "fibre": 2, "water": 0 }, "grams": { "carbo": 9, "fats": 6, "protein": 3, "fibre": 6, "water": 0 } },
+    "jawbreaker": { "wave": 1, "sequence": 30, "minBites": 10, "hardness": 1000, "grid": { "carbo": 8, "fats": 0, "protein": 0, "fibre": 0, "water": 0 }, "grams": { "carbo": 24, "fats": 0, "protein": 0, "fibre": 0, "water": 0 } },
+    "apple": { "wave": 1, "sequence": 10, "minBites": 8, "hardness": 800, "grid": { "carbo": 2, "fats": 0, "protein": 0, "fibre": 1, "water": 5 }, "grams": { "carbo": 6, "fats": 0, "protein": 0, "fibre": 3, "water": 15 } },
+    "bakedBeans": { "wave": 2, "sequence": 15, "minBites": 4, "hardness": 350, "grid": { "carbo": 3, "fats": 0, "protein": 1, "fibre": 1, "water": 11 }, "grams": { "carbo": 9, "fats": 0, "protein": 3, "fibre": 3, "water": 33 } },
+    "friedEgg": { "wave": 2, "sequence": 10, "minBites": 2, "hardness": 200, "grid": { "carbo": 0, "fats": 2, "protein": 2, "fibre": 0, "water": 12 }, "grams": { "carbo": 0, "fats": 6, "protein": 6, "fibre": 0, "water": 36 } },
+    "Chocolate": { "wave": 2, "sequence": 25, "minBites": 7, "hardness": 700, "grid": { "carbo": 9, "fats": 5, "protein": 1, "fibre": 0, "water": 1 }, "grams": { "carbo": 27, "fats": 15, "protein": 3, "fibre": 0, "water": 3 } },
+    "muesliBar": { "wave": 2, "sequence": 25, "minBites": 9, "hardness": 850, "grid": { "carbo": 11, "fats": 1, "protein": 3, "fibre": 1, "water": 0 }, "grams": { "carbo": 33, "fats": 3, "protein": 9, "fibre": 3, "water": 0 } },
+    "banana": { "wave": 2, "sequence": 20, "minBites": 3, "hardness": 300, "grid": { "carbo": 6, "fats": 0, "protein": 0, "fibre": 3, "water": 7 }, "grams": { "carbo": 18, "fats": 0, "protein": 0, "fibre": 9, "water": 21 } },
+    "StrawberryYoghurt": { "wave": 4, "sequence": 10, "minBites": 1, "hardness": 50, "grid": { "carbo": 6, "fats": 0, "protein": 1, "fibre": 0, "water": 25 }, "grams": { "carbo": 18, "fats": 0, "protein": 3, "fibre": 0, "water": 75 } },
+    "fries": { "wave": 4, "sequence": 25, "minBites": 4, "hardness": 400, "grid": { "carbo": 12, "fats": 8, "protein": 1, "fibre": 1, "water": 10 }, "grams": { "carbo": 36, "fats": 24, "protein": 3, "fibre": 3, "water": 30 } },
+    "BowlOfnoodle": { "wave": 4, "sequence": 15, "minBites": 5, "hardness": 500, "grid": { "carbo": 15, "fats": 5, "protein": 3, "fibre": 2, "water": 7 }, "grams": { "carbo": 45, "fats": 15, "protein": 9, "fibre": 6, "water": 21 } },
+    "BowlOfrice": { "wave": 4, "sequence": 20, "minBites": 5, "hardness": 500, "grid": { "carbo": 25, "fats": 0, "protein": 2, "fibre": 1, "water": 4 }, "grams": { "carbo": 75, "fats": 0, "protein": 6, "fibre": 3, "water": 12 } },
+    "fish": { "wave": 4, "sequence": 10, "minBites": 4, "hardness": 400, "grid": { "carbo": 0, "fats": 2, "protein": 10, "fibre": 0, "water": 20 }, "grams": { "carbo": 0, "fats": 6, "protein": 30, "fibre": 0, "water": 60 } },
+    "Veg": { "wave": 8, "sequence": 15, "minBites": 5, "hardness": 450, "grid": { "carbo": 13, "fats": 1, "protein": 4, "fibre": 10, "water": 36 }, "grams": { "carbo": 39, "fats": 3, "protein": 12, "fibre": 30, "water": 108 } },
+    "chickenCurry": { "wave": 8, "sequence": 15, "minBites": 9, "hardness": 850, "grid": { "carbo": 6, "fats": 7, "protein": 11, "fibre": 2, "water": 38 }, "grams": { "carbo": 18, "fats": 21, "protein": 33, "fibre": 6, "water": 114 } },
+    "burger": { "wave": 8, "sequence": 25, "minBites": 9, "hardness": 900, "grid": { "carbo": 20, "fats": 10, "protein": 8, "fibre": 2, "water": 24 }, "grams": { "carbo": 60, "fats": 30, "protein": 24, "fibre": 6, "water": 72 } },
+    "water": { "wave": 8, "sequence": 0, "minBites": 0, "hardness": 0, "grid": { "carbo": 0, "fats": 0, "protein": 0, "fibre": 0, "water": 64 }, "grams": { "carbo": 0, "fats": 0, "protein": 0, "fibre": 0, "water": 320 } },
+    "milk": { "wave": 8, "sequence": 0, "minBites": 0, "hardness": 0, "grid": { "carbo": 5, "fats": 2, "protein": 4, "fibre": 0, "water": 53 }, "grams": { "carbo": 15, "fats": 6, "protein": 12, "fibre": 0, "water": 159 } }
+  }
+}

@@ -1,0 +1,130 @@
+[Config]
+
+*************************************** FOOD AVAILABLE ********************************************
+
+[Food]
+Foodnames = ["burger","fries","chickenCurry","Chocolate","hotcakeNsyrup","biscuit","milk","banana","Veg","fish","water"]
+
+burger= [#waveNum:1, #MinBites :1, #MemName:"burger",#FdName:"burger",#FoodBiteType:"BiteSize",#FoodBiteNum:1,#Carbo:4,#protein:2,#fats:2,#nutrients:0,#fibre:0,#minerals:0,#water:0,#SalivaLvl:0,#HardnessLvl:100,#FoodHardness:6]
+
+fries=[#waveNum:4, #MinBites : 3, #MemName:"fries",#FdName:"fries",#FoodBiteType:"BiteSize",#FoodBiteNum:1,#Carbo:50,#protein:5,#fats:45,#nutrients:10,#fibre:10,#minerals:5,#water:0,#SalivaLvl:0,#HardnessLvl:100,#FoodHardness:4]
+
+chickenCurry=[#waveNum:8, #MinBites : 10, #MemName:"chickenCurry",#FdName:"chickenCurry",#FoodBiteType:"BiteSize",#FoodBiteNum:1,#Carbo:20,#protein:20,#fats:60,#nutrients:5,#fibre:10,#minerals:10,#water:0,#SalivaLvl:0,#HardnessLvl:100,#FoodHardness:7]
+
+Chocolate=[#waveNum:2, #MinBites : 8, #MemName:"Chocolate",#FdName:"Chocolate",#FoodBiteType:"BiteSize",#FoodBiteNum:1,#Carbo:70,#protein:5,#fats:25,#nutrients:0,#fibre:5,#minerals:20,#water:0,#SalivaLvl:0,#HardnessLvl:100,#FoodHardness:8]
+
+biscuit=[#waveNum:1, #MinBites : 6, #MemName:"biscuit",#FdName:"biscuit",#FoodBiteType:"BiteSize",#FoodBiteNum:1,#Carbo:45,#protein:10,#fats:45,#nutrients:0,#fibre:0,#minerals:10,#water:0,#SalivaLvl:0,#HardnessLvl:100,#FoodHardness:6]
+
+milk=[#waveNum:1, #MinBites : 0, #MemName:"milk",#FdName:"milk",#FoodBiteType:"Gulps",#FoodBiteNum:1,#Carbo:30,#protein:20,#fats:50,#nutrients:10,#fibre:0,#minerals:50,#water:0,#SalivaLvl:0,#HardnessLvl:100,#FoodHardness:0]
+
+banana=[#waveNum:4, #MinBites : 4, #MemName:"banana",#FdName:"banana",#FoodBiteType:"BiteSize",#FoodBiteNum:1,#Carbo:90,#protein:5,#fats:5,#nutrients:35,#fibre:20,#minerals:10,#water:0,#SalivaLvl:0,#HardnessLvl:100,#FoodHardness:2]
+
+fish=[#waveNum:8, #MinBites : 6, #MemName:"fish",#FdName:"fish",#FoodBiteType:"BiteSize",#FoodBiteNum:1,#Carbo:0,#protein:90,#fats:10,#nutrients:5,#fibre:0,#minerals:15,#water:0,#SalivaLvl:0,#HardnessLvl:100,#FoodHardness:2]
+
+Veg=[#waveNum:8, #MinBites : 9, #MemName:"Veg",#FdName:"Veg",#FoodBiteType:"Bowls",#FoodBiteNum:1,#Carbo:40,#protein:20,#fats:40,#nutrients:80,#fibre:20,#minerals:20,#water:0,#SalivaLvl:0,#HardnessLvl:100,#FoodHardness:5]
+
+water=[#waveNum:8, #MinBites : 0, #MemName:"water",#FdName:"water",#FoodBiteType:"Gulps",#FoodBiteNum:1,#Carbo:100,#protein:0,#fats:0,#nutrients:0,#fibre:0,#minerals:5,#water:100,#SalivaLvl:0,#HardnessLvl:100,#FoodHardness:0]
+
+
+
+
+
+
+***************************************************************** THE PREDEFINED SCENARIOS *******************************************************************
+
+[Scenarios]
+
+Foodpanel1=[[#burger,#none],[#none,#none],[#none,#none],[#none,#none],[#none,#none],[#none,#none],[#none,#none],[#none,#none],[#none,#none]]
+FdPortions1=[[1,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]
+
+
+Normal=[#CPFTarget:[#Carbo:83,#fats:18,#protein:14,#fibre:0,#water:0]]
+Army=[#CPFTarget:[#Carbo:100,#fats:18,#protein:50,#fibre:0,#water:100]]
+Diarrhea=[#CPFTarget:[#Carbo:60,#fats:18,#protein:14,#fibre:0,#water:100]]
+
+
+
+
+***************************************************************** THE CPF Percentages *******************************************************************
+
+[CPFPercentage]
+
+-----8 waves:
+Foodnames = ["biscuit","jawbreaker","apple","bakedBeans","friedEgg","Chocolate","muesliBar","yoghurt","banana","fries","noodle","rice","Veg","chickenCurry","fish","burger","water", "milk"]
+
+biscuit=[#MinBites:6 ,#FoodMatrice:[#Carbo:5,#fats:2,#protein:1,#fibre:0,#water:0],#Grams:[#Carbo:25,#fats:10,#protein:5,#fibre:0,#water:0]]
+
+jawbreaker = [#MinBites:10,#FoodMatrice:[#Carbo:8,#fats:0,#protein:0,#fibre:0,#water:0],#Grams:[#Carbo:40,#fats:0,#protein:0,#fibre:0,#water:0]]
+
+apple=[#MinBites:8 ,#FoodMatrice:[#Carbo:1,#fats:0,#protein:0,#fibre:1,#water:6],#Grams:[#Carbo:5,#fats:0,#protein:0,#fibre:5,#water:30]]
+
+
+-----16 waves:
+bakedBeans=[#MinBites :5 ,#FoodMatrice:[#Carbo:3,#fats:0,#protein:1,#fibre:1,#water:11],#Grams:[#Carbo:15,#fats:0,#protein:5,#fibre:5,#water:55]]
+
+friedEgg=[#MinBites :4 ,#FoodMatrice:[#Carbo:0,#fats:2,#protein:2,#fibre:0,#water:12],#Grams:[#Carbo:0,#fats:10,#protein:10,#fibre:0,#water:60]]
+
+Chocolate=[#MinBites :8 ,#FoodMatrice:[#Carbo:9,#fats:4,#protein:1,#fibre:1,#water:1],#Grams:[#Carbo:45,#fats:20,#protein:5,#fibre:5,#water:5]]
+
+muesliBar=[#MinBites :9 ,#FoodMatrice:[#Carbo:12,#fats:1,#protein:2,#fibre:1,#water:0],#Grams:[#Carbo:60,#fats:5,#protein:10,#fibre:5,#water:0]]
+
+
+-----32 waves:
+yoghurt=[#MinBites :1 ,#FoodMatrice:[#Carbo:6,#fats:0,#protein:1,#fibre:0,#water:25],#Grams:[#Carbo:30,#fats:0,#protein:5,#fibre:0,#water:125]]
+
+banana=[#MinBites :4 ,#FoodMatrice:[#Carbo:8,#fats:0,#protein:0,#fibre:1,#water:23],#Grams:[#Carbo:40,#fats:0,#protein:0,#fibre:5,#water:115]]
+
+fries= [#MinBites :3 ,#FoodMatrice:[#Carbo:12,#fats:6,#protein:1,#fibre:1,#water:12],#Grams:[#Carbo:60,#fats:30,#protein:5,#fibre:5,#water:60]]
+
+noodle=[#MinBites :6 ,#FoodMatrice:[#Carbo:18,#fats:9,#protein:2,#fibre:1,#water:2],#Grams:[#Carbo:90,#fats:45,#protein:10,#fibre:5,#water:10]]
+
+
+------64 waves:
+rice=[#MinBites :6 ,#FoodMatrice:[#Carbo:51,#fats:0,#protein:4,#fibre:1,#water:8],#Grams:[#Carbo:255,#fats:0,#protein:20,#fibre:5,#water:40]]
+
+Veg=[#MinBites :9 ,#FoodMatrice:[#Carbo:8,#fats:0,#protein:2,#fibre:3,#water:51],#Grams:[#Carbo:40,#fats:0,#protein:10,#fibre:15,#water:255]]
+
+chickenCurry=[#MinBites :10 ,#FoodMatrice:[#Carbo:0,#fats:4,#protein:17,#fibre:0,#water:43],#Grams:[#Carbo:0,#fats:20,#protein:85,#fibre:0,#water:215]]
+
+fish=[#MinBites :6 ,#FoodMatrice:[#Carbo:0,#fats:1,#protein:17,#fibre:0,#water:46],#Grams:[#Carbo:0,#fats:5,#protein:85,#fibre:0,#water:230]]
+
+burger= [#MinBites :1 ,#FoodMatrice:[#Carbo:8,#fats:0,#protein:0,#fibre:0,#water:0],#Grams:[#Carbo:95,#fats:40,#protein:40,#fibre:5,#water:140]]
+
+
+
+water=[#MinBites :0 ,#FoodMatrice:[#Carbo:0,#fats:0,#protein:0,#fibre:0,#water:64],#Grams:[#Carbo:0,#fats:0,#protein:0,#fibre:0,#water:320]]
+
+milk=[#MinBites :0 ,#FoodMatrice:[#Carbo:0,#fats:0,#protein:0,#fibre:0,#water:64],#Grams:[#Carbo:0,#fats:0,#protein:0,#fibre:0,#water:320]]
+
+
+
+
+***************************************************************** THE SCORES *******************************************************************
+
+[Score]
+
+---the number of points that player starts game with:
+plPoints = 200
+
+
+
+MinBites = [#biscuit:6, #jawbreaker:10, #apple:8, #bakedBeans:5, #friedEgg:4, #Chocolate:8, #muesliBar:9, #yoghurt:1, #banana:4, #fries:3, #noodle:6, #rice:6, #Veg:9, #chickenCurry:10, #fish:6, #burger:10, #water:0, #milk:0]
+
+
+
+pPuncherScore = [#DigPunchCorrect:+10, #DigPunchWrong:+2, #DigNotPunch:-5, #UndigPunchWrong:-10]
+
+
+
+
+-----plCPFLevel = [#Normal:[#Projected:[#Carbo:0,#fats:0,#protein:0,#fibre:0,#water:0], #Achieved:[#Carbo:0,#fats:0,#protein:0,#fibre:0,#water:0]], #Army:[#Projected:[#Carbo:0,#fats:0,#protein:0,#fibre:0,#water:0], #Achieved:[#Carbo:0,#fats:0,#protein:0,#fibre:0,#water:0]], #Diarrhea:[#Projected:[#Carbo:0,#fats:0,#protein:0,#fibre:0,#water:0], #Achieved:[#Carbo:0,#fats:0,#protein:0,#fibre:0,#water:0]]]
+
+
+
+
+
+
+
+
+
+

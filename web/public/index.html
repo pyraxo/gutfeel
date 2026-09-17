@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#31439d">
+  <title>Gut Feel · Browser edition</title>
+  <link rel="stylesheet" href="shell.css">
+  <link rel="stylesheet" href="controls.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to game</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Gut Feel home"><img src="report-assets/icon.png" alt=""><span><b>GUT FEEL</b><small>Unofficial browser project</small></span></a>
+    <nav aria-label="Main navigation"><a href="/">Play</a><a href="?mode=tutorial">Training</a><a href="about.html">About</a><a href="technical.html">How it works</a></nav>
+  </header>
+  <main id="main-content" class="app-shell">
+    <aside class="rights-banner" aria-label="Copyright and project status"><strong>Unofficial preservation project.</strong> Original Gut Feel game and materials © 2009 Amdon Consulting Pte Ltd. Not affiliated with or endorsed by Amdon or Singapore's Ministry of Education. <a href="legal.html">Legal and attributions</a>.</aside>
+
+    <section id="lobby" class="lobby" aria-labelledby="lobby-title" hidden>
+      <div class="lobby-intro"><p class="eyebrow">MULTIPLAYER LAB BENCH</p><h1 id="lobby-title">Build a gut crew.</h1><p id="lobby-copy">Create a lobby, send the invite to your friends, and play together.</p></div>
+      <div class="lobby-workbench">
+        <form id="lobby-create" class="lobby-form" novalidate>
+          <p class="lobby-kicker">01 · Facilitator</p><h2>Make a mission</h2>
+          <label for="creator-name">Your name</label><input id="creator-name" name="creator-name" autocomplete="name" maxlength="10" placeholder="Avery" required>
+          <label for="scenario">Choose a scenario</label><select id="scenario" name="scenario"><option value="normal">A day in the life</option><option value="competition">Burger Jam</option></select>
+          <button class="lobby-primary" type="submit">Create lobby <span>→</span></button><p class="form-note">Up to five players. Keep this tab open while you play.</p>
+        </form>
+        <form id="lobby-join" class="lobby-form lobby-join" novalidate>
+          <p class="lobby-kicker">02 · Player</p><h2>Join a mission</h2>
+          <label for="join-code">Lobby code or invite link</label><input id="join-code" name="join-code" autocomplete="off" spellcheck="false" placeholder="Paste your invite">
+          <label for="player-name">Your name</label><input id="player-name" name="player-name" autocomplete="name" maxlength="10" placeholder="Sam" required>
+          <button class="lobby-primary lobby-primary-blue" type="submit">Enter lobby <span>→</span></button><p class="form-note">Your host will start when everyone is ready.</p>
+        </form>
+      </div>
+      <section id="lobby-session" class="lobby-session" aria-live="polite" hidden>
+        <div class="lobby-code-block"><p class="lobby-kicker">Mission code</p><div class="lobby-code-control"><strong id="lobby-code">—</strong><button id="copy-code" type="button">Copy code</button><button id="copy-invite" type="button">Copy link</button></div><div id="share-fallback" class="share-fallback" hidden><label id="share-label" for="share-value">Copy this link</label><input id="share-value" readonly><button id="share-close" type="button">Close</button></div></div>
+        <div class="lobby-presence"><p id="lobby-state">Preparing mission control…</p><p id="lobby-roster">0 of 5 players connected</p><ul id="lobby-players" aria-label="Lobby players"></ul></div>
+        <div class="lobby-session-actions"><button id="open-mission-control" type="button" hidden>Mission control</button><button id="start-lobby" class="lobby-primary" type="button" hidden>Start game</button><button id="leave-lobby" type="button">Leave lobby</button><button id="switch-lobby" type="button" hidden>Leave and join invite</button><button id="end-lobby" class="lobby-danger" type="button" hidden>End lobby</button></div>
+      </section>
+      <p id="lobby-error" class="lobby-error" role="alert" hidden></p>
+    </section>
+
+    <div id="play-surface" hidden>
+      <div id="game-toolbar" class="game-toolbar" aria-label="Game tools"><p><span class="live-dot"></span><span id="game-toolbar-label">Gut Feel console</span></p><div><button id="game-lobby-toggle" type="button" aria-expanded="false" aria-controls="game-lobby-panel" hidden>Lobby</button><button id="audio" aria-pressed="false">Sound on</button><button id="fullscreen">Full screen</button><button id="restart" type="button">Restart</button></div></div>
+      <div id="game-lobby-panel" hidden><button id="game-lobby-close" type="button">Close lobby</button></div>
+      <div id="game-stage"><section id="game" aria-label="Original Gut Feel game"><div class="launch"><img src="report-assets/icon.png" alt=""><p class="eyebrow">THE ORIGINAL GUT REPLACEMENT MODULE</p><h1 id="mode-title">Gut Feel</h1><p id="mode-description">Work together to keep George’s digestive system running.</p><button id="launch">Start game <span>→</span></button><p class="loading-note">Original artwork and music load when you start.</p></div></section><p id="status" role="status"></p><section id="game-controls" hidden class="controller" aria-label="Game controls">
+        <div class="controller-hint"><strong>Robot controls</strong><p>Hold to move · release to stop.</p></div>
+        <div class="dpad" role="group" aria-label="Movement">
+          <button data-key="ArrowLeft" aria-label="Move left" title="Move left (Left arrow)">←</button>
+          <button id="stop" aria-label="Stop movement" title="Release all controls">■</button>
+          <button data-key="ArrowRight" aria-label="Move right" title="Move right (Right arrow)">→</button>
+        </div>
+        <div class="actions" role="group" aria-label="Game actions">
+          <button class="action-icon action-up" data-key="ArrowUp" aria-label="Up or select station" title="Up / select station">↑</button>
+          <button class="action-icon action-down" data-key="ArrowDown" aria-label="Down, cycle choices or swallow" title="Down / cycle / swallow">↓</button>
+          <button class="action-icon action-exit" data-key="x" aria-label="Exit seat" title="Exit seat (X)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 4H4v16h6M10 12h10m-4-4 4 4-4 4"/></svg></button>
+          <button class="action-icon action-space" data-key=" " aria-label="Space — boost" title="Boost (Space)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9v7h18V9"/></svg></button>
+          <button id="controls-more" type="button" aria-label="More controls" aria-expanded="false" aria-controls="secondary-controls">More controls</button>
+          <div id="secondary-controls" class="secondary-actions">
+            <button data-key="1">1</button><button data-key="2">2</button><button data-key="3">3</button><button data-key="m">Menu <kbd>M</kbd></button><button data-key="h">Help <kbd>H</kbd></button>
+          </div>
+          <button id="exit-fullscreen">Exit full screen</button>
+        </div>
+      </section></div>
+      <p id="downloads" role="status" hidden></p>
+      <section id="mission-control" class="mission-control" aria-label="Original mission control" aria-hidden="true"><div class="mission-control-bar"><p><span class="mission-dot"></span>Original mission control</p><button id="close-mission-control" type="button">Return to game</button></div><iframe id="host-agent-frame" title="Original Gut Feel mission control" src="about:blank" width="800" height="600"></iframe></section>
+    </div>
+
+    <details class="manuals"><summary>Original manuals and controls</summary><p>Tap a control for a short press, or hold it to keep it down; the robot may coast after release. The square releases every on-screen control. Left and Right are on the left. Up and Down are on the right: Up selects or accesses stations; Down cycles choices or swallows. The spacebar boosts (Space), and the door exits a seat (X). More contains the number, Menu, and Help controls. Keyboard controls are unchanged.</p><p class="manuals-rights">The linked manuals are original Amdon materials and are not covered by the browser project's GPL licence.</p><a href="manuals/manual.pdf" target="_blank">Player manual</a><a href="manuals/scoring.pdf" target="_blank">Scoring guide</a><a href="manuals/facilitation.pdf" target="_blank">Facilitation guide</a></details>
+    <details id="diagnostics" hidden><summary>Migration diagnostics</summary><pre></pre></details>
+  </main>
+  <footer class="site-footer"><p><strong>Unofficial preservation project.</strong> Original Gut Feel game and materials © 2009 Amdon Consulting Pte Ltd.</p><p><a href="legal.html">Legal and attributions</a> · <a href="/source">Corresponding source</a></p></footer>
+  <script src="bridge.js"></script><script src="control-input.js"></script><script src="shell.js"></script><script src="lobby.js"></script>
+</body>
+</html>

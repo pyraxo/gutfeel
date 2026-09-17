@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#31439d">
+  <meta name="description" content="A plain-English guide to the original Gut Feel movies, browser runtime, multiplayer relay, and report system.">
+  <title>How it works · Gut Feel browser edition</title>
+  <link rel="stylesheet" href="shell.css">
+  <link rel="stylesheet" href="editorial.css">
+  <link rel="stylesheet" href="technical.css">
+</head>
+<body class="editorial-page technical-page">
+  <a class="skip-link" href="#main-content">Skip to technical guide</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Gut Feel home"><img src="report-assets/icon.png" alt=""><span><b>GUT FEEL</b><small>Unofficial browser project</small></span></a>
+    <nav aria-label="Main navigation"><a href="/">Play</a><a href="/?mode=tutorial">Training</a><a href="about.html">About</a><a href="technical.html" aria-current="page">How it works</a></nav>
+  </header>
+
+  <main id="main-content" class="technical-main">
+    <article class="technical-guide">
+      <header class="technical-hero">
+        <div>
+          <p class="technical-kicker">Behind the browser version</p>
+          <h1>How the old game runs in a browser.</h1>
+          <p class="technical-deck">Gut Feel expects an old Windows computer and a multiplayer server from the same era. To get it working in a browser, I had to give the original game code a way to run and rebuild the services it depended on.</p>
+        </div>
+        <aside class="technical-summary" aria-label="Guide summary">
+          <p>The game still uses its original rules, artwork, and sound. The Host runs the team session, and players exchange messages in the original format.</p>
+          <p>The browser version adds the software to run those files, connect players through a lobby server, and display their reports.</p>
+        </aside>
+      </header>
+
+      <nav class="technical-contents" aria-label="On this page">
+        <span>Contents</span>
+        <a href="#original-files">Original files</a>
+        <a href="#runtime">Runtime</a>
+        <a href="#bridge">Bridge</a>
+        <a href="#multiplayer">Multiplayer</a>
+        <a href="#reports">Reports</a>
+        <a href="#limits">Limits</a>
+      </nav>
+
+      <section id="original-files" class="technical-section">
+        <div class="technical-section__heading"><span>01</span><div><p>Original system</p><h2>The game is still a Director program</h2></div></div>
+        <div class="technical-section__body">
+          <p>Gut Feel was made in Adobe Director, which packages interactive programs as "movies". Despite the name, these are executable game files: they respond to your input and contain the instructions for what happens next.</p>
+          <p>The game has three main movies. Each player runs the Client, while the Tutorial provides a separate practice mode. The Host manages the team roster, starts the scenario, and keeps the scores and reports.</p>
+          <p>Inside those files, code written in Director's Lingo language controls the rooms, scoring rules, and messages between players. The browser version runs that recovered code with the game's original artwork and sound.</p>
+        </div>
+      </section>
+
+      <figure id="system-map" class="architecture-map" aria-labelledby="architecture-title">
+        <div class="architecture-map__heading">
+          <p>Multiplayer</p>
+          <h2 id="architecture-title">From one player to another</h2>
+        </div>
+        <ol class="architecture-flow">
+          <li><strong>Director movie</strong><span>Runs the original game logic.</span></li>
+          <li><strong>DirPlayer</strong><span>Runs the movie in the browser.</span></li>
+          <li><strong>Browser bridge</strong><span>Connects old requests to new services.</span></li>
+          <li><strong>Lobby server</strong><span>Separates teams and forwards messages.</span></li>
+          <li><strong>Other players</strong><span>Receive the original game messages.</span></li>
+        </ol>
+        <figcaption>Messages travel through the server to reach the other players in the same lobby.</figcaption>
+      </figure>
+
+      <section id="runtime" class="technical-section technical-section--blue">
+        <div class="technical-section__heading"><span>02</span><div><p>Browser runtime</p><h2>DirPlayer runs the movies</h2></div></div>
+        <div class="technical-section__body">
+          <p>Browsers cannot run Director movies on their own. This version uses DirPlayer, a runtime that reads the movies and executes their instructions. It handles the pictures and sound as well as input from the player.</p>
+          <p>DirPlayer is written in Rust and compiled to WebAssembly, a program format that browsers can execute. Once it loads, it provides the environment the game needs to run. I added compatibility changes for behavior Gut Feel relies on.</p>
+          <p>Director also used plugins called Xtras for things such as network connections and Windows services. The browser runtime implements the functions this game needs, though some desktop functions remain unsupported.</p>
+        </div>
+      </section>
+
+      <section id="original-and-new" class="technical-section">
+        <div class="technical-section__heading"><span>03</span><div><p>Responsibility</p><h2>What stays original</h2></div></div>
+        <div class="technical-section__body technical-section__body--wide">
+          <div class="comparison-wrap" role="region" aria-labelledby="comparison-title" tabindex="0">
+            <table>
+              <caption id="comparison-title">Original functions and browser components</caption>
+              <thead><tr><th scope="col">Function</th><th scope="col">Original component</th><th scope="col">Browser component</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Game rules</th><td>Lingo instructions in the movies</td><td>DirPlayer runs the instructions.</td></tr>
+                <tr><th scope="row">Artwork and sound</th><td>Original game files</td><td>The runtime displays and plays the files.</td></tr>
+                <tr><th scope="row">Configuration</th><td><code>DSConfig.amd</code> files</td><td>The browser loads the correct file before startup.</td></tr>
+                <tr><th scope="row">Player input</th><td>Keyboard and mouse</td><td>Browser code also supplies touch controls.</td></tr>
+                <tr><th scope="row">Team setup</th><td>Host movie and group messages</td><td>A browser lobby connects players to the Host.</td></tr>
+                <tr><th scope="row">Network data</th><td>Director Multiuser message format</td><td>The server forwards messages between players.</td></tr>
+                <tr><th scope="row">Reports</th><td>Host creates an AMR report</td><td>The browser saves and displays the report.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="bridge" class="technical-section technical-section--orange">
+        <div class="technical-section__heading"><span>04</span><div><p>Compatibility</p><h2>Replacing the old service calls</h2></div></div>
+        <div class="technical-section__body">
+          <p>The game still asks for services at its old addresses. A small piece of browser code, called the bridge, redirects the supported requests to this website. It also chooses the connection for each network request and attaches the player's lobby information.</p>
+          <p>Other bits of compatibility code, called adapters, handle individual jobs such as reading configuration, accepting input, and exporting a report. Each one lets the original game request a familiar operation while the browser does the work.</p>
+          <div class="technical-note"><strong>Loading configuration</strong><p>The game expects to read a configuration value immediately, but a browser may have to wait for a file to download. I load the file before starting the movie, so the adapter already has the values when the game asks for them.</p><p>The Client and Tutorial use different configuration files. Keeping their paths separate prevents one mode from receiving the other's settings.</p></div>
+        </div>
+      </section>
+
+      <section id="startup" class="technical-section">
+        <div class="technical-section__heading"><span>05</span><div><p>Startup</p><h2>How a multiplayer game starts</h2></div></div>
+        <div class="technical-section__body technical-section__body--wide">
+          <ol class="process-list">
+            <li>The browser loads the page and the DirPlayer runtime.</li>
+            <li>The lobby service creates the session or admits the invited player.</li>
+            <li>The browser downloads the selected movie's configuration before DirPlayer starts the movie.</li>
+            <li>On the creator's page, the original Host starts in its own frame with the facilitator credential.</li>
+            <li>Each Client connects to the lobby relay and joins the team. The lobby marks that player as ready.</li>
+            <li>The creator selects a scenario and starts the session.</li>
+            <li>The original Host finishes its setup and sends the start message. Play then continues through the browser runtime.</li>
+          </ol>
+          <div class="technical-note technical-note--quiet"><p>Training starts its own movie with its own configuration, so you can play it without creating a multiplayer lobby.</p></div>
+        </div>
+      </section>
+
+      <section id="multiplayer" class="technical-section technical-section--lime">
+        <div class="technical-section__heading"><span>06</span><div><p>Network</p><h2>Getting players into the same game</h2></div></div>
+        <div class="technical-section__body">
+          <h3>The lobby service</h3>
+          <p>A lobby groups up to five players into one temporary session, including the person who creates it. Through the lobby service's API, the browser can create or join a session, get its status, leave, or end the game.</p>
+          <p>The server keeps the player list and checks who can do what. Each player receives a private credential that identifies their role. The creator gets a second credential to act as the facilitator. Neither credential appears in the invite link.</p>
+
+          <h3>Why the Host still exists</h3>
+          <p>The creator's page runs the original Host in a separate frame, using the facilitator credential. That lets the creator play normally while the Host handles team setup, records scores, and prepares reports. The Host does not occupy a player slot.</p>
+          <p>Starting a game involves both systems. The lobby service checks that the Host and every registered player are ready, then changes the status to <code>starting</code>. The Host completes its original setup and sends the start message. Only then does the server mark the session as <code>running</code>.</p>
+
+          <h3>The relay</h3>
+          <p>The game still sends messages in the Director Multiuser protocol, the format understood by the original movies. The runtime sends them over WebSockets, connections that stay open so the browser can exchange messages throughout a session.</p>
+          <p>Each lobby has its own relay on the server to forward those messages. It keeps players, groups, and peer connections separate from those in other lobbies.</p>
+          <p>In the desktop game, each player also has a peer host that accepts connections from other players. A browser cannot accept that kind of connection, so the server provides a route for each peer host instead. These routes preserve who sends messages to whom. All traffic goes through the server; there are no direct WebRTC connections between browsers.</p>
+        </div>
+      </section>
+
+      <section id="reports" class="technical-section">
+        <div class="technical-section__heading"><span>07</span><div><p>Reports</p><h2>The Host still writes the results</h2></div></div>
+        <div class="technical-section__body">
+          <p>The original Host produces an AMR report containing XML, a text format with named fields for the players, scores, scenario, and room results.</p>
+          <p>To make the download work, a file adapter saves the Host's output in the runtime's memory. An archive adapter can then package that AMR file into a ZIP. Both preserve the report's contents, including the scores the Host calculated.</p>
+          <p>The <a href="report.html">report page</a> reads an AMR file or a supported ZIP, displays the recorded results, and prepares them for printing.</p>
+          <h3>Open a report</h3>
+          <ol class="procedure-list">
+            <li>Open the report page.</li>
+            <li>Select an AMR file or a ZIP file that contains an AMR report.</li>
+            <li>Select the scenario and team that you want to inspect.</li>
+            <li>Use the browser print command to print the report or save a PDF.</li>
+          </ol>
+          <p>Because the report omits some game events, the viewer cannot independently recalculate the complete final score. It displays the values recorded by the Host.</p>
+        </div>
+      </section>
+
+      <section id="security" class="technical-section technical-section--magenta">
+        <div class="technical-section__heading"><span>08</span><div><p>Access</p><h2>The server separates teams and roles</h2></div></div>
+        <div class="technical-section__body">
+          <p>Every connection must belong to a lobby and have a valid credential for its role. A player's credential cannot operate the facilitator controls, and later connections must use the same game identity as the first one.</p>
+          <p>For public hosting, the server also checks the website's origin: its scheme, hostname, and port. Requests from a different origin are rejected. HTTPS encrypts web traffic, and WSS does the same for WebSocket messages.</p>
+          <div class="technical-note technical-note--warning"><strong>If you host a server</strong><p>WebSocket connection addresses include a credential. Configure your proxy and access logs to omit that value so it does not end up in a log file.</p></div>
+          <p>This protects lobby access, but the original game still trusts its invited players to send valid gameplay actions. It is not a complete anti-cheat system.</p>
+        </div>
+      </section>
+
+      <section id="assets" class="technical-section">
+        <div class="technical-section__heading"><span>09</span><div><p>Repository</p><h2>The public source includes the playable game</h2></div></div>
+        <div class="technical-section__body">
+          <p>The public repository includes the browser-ready movies, artwork, sound, manuals, compatibility code, and server required to run a complete copy.</p>
+          <p>The original materials retain their own copyright and are separate from the GPL licence for the browser compatibility code.</p>
+          <p>The source tests cover the replacement code, including its network and input behavior.</p>
+          <p>The repository records the size and SHA-256 hash of each preserved input file. Comparing these values tells you whether a file matches the preserved copy. It cannot tell you whether every part of the game behaves correctly in the browser.</p>
+        </div>
+      </section>
+
+      <section id="limits" class="technical-section technical-section--limits">
+        <div class="technical-section__heading"><span>10</span><div><p>Limits</p><h2>What still needs work</h2></div></div>
+        <div class="technical-section__body">
+          <ul class="limit-list">
+            <li>Some behavior still needs comparison with the original game, including a full five-player digestion session from start to finish.</li>
+            <li>Testing on physical phones is still outstanding.</li>
+            <li>Lobby data exists only in server memory, so restarting the server ends active games.</li>
+            <li>The facilitator can reconnect while players are waiting. During startup or play, losing that connection ends the lobby because the game cannot replace its Host or restore the match.</li>
+            <li>The service currently runs as one application instance.</li>
+            <li>Some functions from the old desktop components are still unsupported.</li>
+          </ul>
+        </div>
+      </section>
+
+      <aside class="term-list" aria-labelledby="terms-title">
+        <div><p>Reference</p><h2 id="terms-title">Terms used on this page</h2></div>
+        <dl>
+          <div><dt>Adapter</dt><dd>Code that implements a desktop function using browser features.</dd></div>
+          <div><dt>Bridge</dt><dd>Browser code that redirects the game's old service requests.</dd></div>
+          <div><dt>Client</dt><dd>The original movie that runs a player's game.</dd></div>
+          <div><dt>Credential</dt><dd>A private value the server uses to recognise a participant and their permissions.</dd></div>
+          <div><dt>Director movie</dt><dd>An interactive program with Director content and instructions.</dd></div>
+          <div><dt>Facilitator</dt><dd>The creator's separate role for controlling the original Host.</dd></div>
+          <div><dt>Host</dt><dd>The original movie that controls the team session.</dd></div>
+          <div><dt>Lobby</dt><dd>A temporary session for one team.</dd></div>
+          <div><dt>Peer host</dt><dd>A player's connection point for messages from other players.</dd></div>
+          <div><dt>Relay</dt><dd>A server component that forwards messages.</dd></div>
+          <div><dt>Runtime</dt><dd>Software that runs another program.</dd></div>
+          <div><dt>WebSocket</dt><dd>A connection that stays open so a browser and server can exchange messages.</dd></div>
+        </dl>
+      </aside>
+
+    </article>
+
+    <nav class="editorial-actions" aria-label="Continue">
+      <a href="/">Play Gut Feel <span aria-hidden="true">→</span></a>
+      <a href="about.html">Read the story</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer"><p><strong>Unofficial preservation project.</strong> Original Gut Feel game and materials © 2009 Amdon Consulting Pte Ltd.</p><p><a href="legal.html">Legal and attributions</a> · <a href="/source">Corresponding source</a></p></footer>
+</body>
+</html>

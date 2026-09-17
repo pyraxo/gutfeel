@@ -1,0 +1,11 @@
+*
+!Dockerfile
+!.dockerignore
+!server.mjs
+!package.json
+!package-lock.json
+!server/
+!server/**
+!web/
+!web/public/
+!web/public/**

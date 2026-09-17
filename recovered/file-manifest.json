@@ -1,0 +1,687 @@
+{
+  "generatedFrom": "gutfeel-installed",
+  "fileCount": 136,
+  "totalBytes": 222037196,
+  "files": [
+    {
+      "path": "gutfeel-installed/Client/DSConfig.amd",
+      "bytes": 10939,
+      "sha256": "6bb98b722c91e162c5d39bc35daeb46911cc5e294b71d5e419f95fcf37c49ad1"
+    },
+    {
+      "path": "gutfeel-installed/Client/Gut Feel Manual.pdf",
+      "bytes": 2249080,
+      "sha256": "60b95d8bbca47830d3e8fb49e2a40fb4dfe618403bbfea7d9f3b9e8a26dc83f4"
+    },
+    {
+      "path": "gutfeel-installed/Client/Gut Feel SCORING GUIDE.pdf",
+      "bytes": 1926382,
+      "sha256": "7ef9c190eee51dded89e06428bb1e26dfc99dd12d625a730a5d79d9f1667c42d"
+    },
+    {
+      "path": "gutfeel-installed/Client/Gut feel.bmp",
+      "bytes": 90416,
+      "sha256": "94491bdfb74f38eddc89efe7ec9427b1f6883c5f5b839a6b827d3a3b9bfd9235"
+    },
+    {
+      "path": "gutfeel-installed/Client/Gut feel.exe",
+      "bytes": 92141804,
+      "sha256": "a087abe5c9bab3356f64e776e1a2e95a2c7e32702b8b55a382c9332be244801c"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/ActiveX/ActXPriv.x32",
+      "bytes": 204800,
+      "sha256": "da246aee1879c80f5ee287d9a435321394d9d7e9d5ea5dac3de61302d54a6ab1"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/ActiveX/ActiveX.x32",
+      "bytes": 122880,
+      "sha256": "cdabba7e77bca296eb07aa57aab251d83dd51dabb753fdf9b5d0821f0d7a35ca"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Actor Control.x32",
+      "bytes": 61440,
+      "sha256": "871759554a3ce8ade8525af9a6b3c54ac6e31371844bd13062dcbfb8c81eab0f"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/BMP Agent.x32",
+      "bytes": 24576,
+      "sha256": "d8ee116210dd2c9f993551b69c580877f71c85624e7b15e6e1b7580c6936db79"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/BudFile.x32",
+      "bytes": 172032,
+      "sha256": "93e5791f6063dffec590a9e68445ebab80bd44519d50ec47f73d55aea042eccd"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Buddy API Xtra.x32",
+      "bytes": 540672,
+      "sha256": "df101a544cc5fd02e779402134c75fd0bf350d4ca63b8f93fb8b36caaad00687"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/DSVL.dll",
+      "bytes": 77824,
+      "sha256": "d924e22d3c29d839dce0dc3d5c5644556c6194a0d7c9101d37be477078db868e"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/DirectImage.x32",
+      "bytes": 2519040,
+      "sha256": "1cf034fac6d0d718d392b5b29d462d456145b11fcab34f3143cb826fb42bc134"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/DirectSound.x32",
+      "bytes": 32768,
+      "sha256": "d8ca89c97177464c00323f9ad3e5fd95353ce093706c559dfb63a8a535ab3dad"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/DisplayMode.x32",
+      "bytes": 130560,
+      "sha256": "524ab6da46218cc5893c71ffc36497cad206b0c7e48212f5dc1026fb1fe64110"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/DisplayModeDialog.x32",
+      "bytes": 291840,
+      "sha256": "14c2ceb3ff6c0d417729ce4b21959f13672c351076c2581817b1f8ecd0d57696"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/FileXtra4.x32",
+      "bytes": 122880,
+      "sha256": "a2b4b1edd1b400173b675d11a84e317a3e4bfd24a32a19eb7f770b12afc07bda"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Flash Agent.x32",
+      "bytes": 24576,
+      "sha256": "3b983abec73d75952bbb9b1191e0a6f2e1b7f1f396afa07fc40651d69b4030c7"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Flash Asset/Flash Asset Options.x32",
+      "bytes": 151552,
+      "sha256": "a5a166d2445ed7090cf7142b3556a60973c042cdad6f5910580c7a80f26fd33c"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Flash Asset/Flash Asset.x32",
+      "bytes": 823296,
+      "sha256": "cef56c155e1db755eb9d58e9b828b683b6a8632643f4760bce537c40c792eb32"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Font Asset Dialog.x32",
+      "bytes": 122880,
+      "sha256": "fdf214a8dca0ddfdd8307c5111aa6692f703f20f8c9f538df136115db0fba579"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Font Asset.x32",
+      "bytes": 65536,
+      "sha256": "cec9109f1b022555e12459a932f77d21cc00bcc95e9c72cd0966e41c14294e3e"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Font Xtra.x32",
+      "bytes": 278528,
+      "sha256": "36cf1efec70e9fcd88f44c964ea95c37353249cbbe331999a8afb11f7e10813a"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/JPEG Agent.x32",
+      "bytes": 24576,
+      "sha256": "2de8bb570ea570db3bce6c2161fe8217d5a32adb7599eda7ab6ef226fa526be9"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/3DAuth.x32",
+      "bytes": 81920,
+      "sha256": "e7fd471fe67e17b68eb66fb3c107a577ee064d87073145b2802db998af4c7aba"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/ActiveX/ActXPriv.x32",
+      "bytes": 204800,
+      "sha256": "da246aee1879c80f5ee287d9a435321394d9d7e9d5ea5dac3de61302d54a6ab1"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/ActiveX/ActiveX.x32",
+      "bytes": 122880,
+      "sha256": "cdabba7e77bca296eb07aa57aab251d83dd51dabb753fdf9b5d0821f0d7a35ca"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/Animated GIF Asset.x32",
+      "bytes": 40960,
+      "sha256": "c11599d784f05f06f1839f70dc93d6e7930aa59702a353ff3683d96546af3f97"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/Animated GIF Options.x32",
+      "bytes": 90112,
+      "sha256": "57ce2677d557ef9c9d8a1539c8d43bd8df939331b2dd9fabbfe149618bdc7027"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/Cursor Asset.x32",
+      "bytes": 69632,
+      "sha256": "c85034539f78ebd2a4912f36a22282a861e940f9f9794eb1245f4c891f530cd1"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/Cursor Options.x32",
+      "bytes": 106496,
+      "sha256": "67504f54e8cc4a512b91ffd7a172539c630000790fdfabaa1fd1788497bb1a3f"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/DVD Asset.x32",
+      "bytes": 81920,
+      "sha256": "9927fe65fd6393c3f79cd06bd46affb2495a695c61222e57601e9e1a04685260"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/DVD Authoring.x32",
+      "bytes": 53248,
+      "sha256": "24665a3deb8252479ead66687150a6b8c765e234ca64c31d47ac0c6121357a16"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/Flash Asset/Flash Asset Options.x32",
+      "bytes": 151552,
+      "sha256": "a5a166d2445ed7090cf7142b3556a60973c042cdad6f5910580c7a80f26fd33c"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/Flash Asset/Flash Asset.x32",
+      "bytes": 823296,
+      "sha256": "cef56c155e1db755eb9d58e9b828b683b6a8632643f4760bce537c40c792eb32"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/Font Asset Dialog.x32",
+      "bytes": 122880,
+      "sha256": "fdf214a8dca0ddfdd8307c5111aa6692f703f20f8c9f538df136115db0fba579"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/Font Asset.x32",
+      "bytes": 65536,
+      "sha256": "cec9109f1b022555e12459a932f77d21cc00bcc95e9c72cd0966e41c14294e3e"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/Font Xtra.x32",
+      "bytes": 278528,
+      "sha256": "36cf1efec70e9fcd88f44c964ea95c37353249cbbe331999a8afb11f7e10813a"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/QT/QT6Asset.x32",
+      "bytes": 122880,
+      "sha256": "3b65921cc38e155ae65b365dce13238ab29404148d59344679e2692736756640"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/QT/QTAuth.x32",
+      "bytes": 147456,
+      "sha256": "e5d02986f18b7253514a70aadef1ee4c58e28c37b248afccdc9061b57ae47cd0"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/RealMedia Asset.x32",
+      "bytes": 77824,
+      "sha256": "593b4191da3d41b8bfd9189cff2126f08ce3b60a958fb0810eab8330ffb71fe7"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/RealMedia Authoring.x32",
+      "bytes": 57344,
+      "sha256": "381d302e3df102bb3f46986aeabb06c68c93d46f09c71318fe222b284db4feb4"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/SWADCmpr.x32",
+      "bytes": 69632,
+      "sha256": "dd75853f47a8930b523a19842e1391e10a81aabb4baa56ece6fc0e476b2d9aea"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/SWAOpt.x32",
+      "bytes": 73728,
+      "sha256": "7652f87ef966f0e2a1f2769a0ea0ea6f823af49eec05f52b43c67c6958a5e24d"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/SWAStrm.x32",
+      "bytes": 57344,
+      "sha256": "640d25f863fa96f122d620539a324ce686c50b44fb379bfe6abacc9d2c488d69"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/Shockwave 3D Asset.x32",
+      "bytes": 1687552,
+      "sha256": "dd38f6790945ff1f9d21dc36a1c24529dc34b09e285219397bc03337cd886bcf"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/Sound Control.x32",
+      "bytes": 49152,
+      "sha256": "21d6ac95dd0d01e2c0e962d95489146267f1ee373e0c3e373b54e42f64a38407"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/Text Asset.x32",
+      "bytes": 94208,
+      "sha256": "db22d1b3d3734d6c3e5535d3f5b0f25aa7e8cfd9cdf875828b5edb6e43304be8"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/TextAuth.x32",
+      "bytes": 90112,
+      "sha256": "38d356cb8c5529be979f7fbae233537e8960c901b7c62499d7b67309d7dfaa96"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/Vector Editor Xtra.x32",
+      "bytes": 372736,
+      "sha256": "c8320f96e693e70d27538c7dde200f10b4b453a90f65314dc4c9ab00a9ecc36a"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/Windows Media Asset.x32",
+      "bytes": 90112,
+      "sha256": "5b9bb177523de09a87820dca8e1657ff51caf5117572b95420dddffede909daa"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Media Element/Windows Media Auth.x32",
+      "bytes": 57344,
+      "sha256": "2d1690a65e76fc14326fcf408bf029b7ce5b2c27750d70f7ed6c9325e83d9943"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Mui Dialog.x32",
+      "bytes": 282624,
+      "sha256": "67dafbde8966b6da4eb894608cacdeb276788148d03609611536078b766638c0"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Multiusr.x32",
+      "bytes": 159744,
+      "sha256": "486d92bcdfaa405421f64db531a3f4e410be44bc867a8d5d34589e657bf63ca6"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/PNG Import Export.x32",
+      "bytes": 139264,
+      "sha256": "bbb94486d0b128ffcaaeba214af77ad8a297e7d8f4c417239a585b793149dae9"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Palette Import.x32",
+      "bytes": 28672,
+      "sha256": "9d26aab6a9d58eb34a908585d11f722ae0d608172e2000a52e9f3be7ca0cdd08"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/SWA Import Export.x32",
+      "bytes": 45056,
+      "sha256": "1b12086a1b932ac816f9d468909cac9b72c4a2353dab098e1468316815656943"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Script Agent.x32",
+      "bytes": 24576,
+      "sha256": "b2ea044b2c4097ae84dcc222fe80ed9373d74458a1aff6a4b111ddba834fae77"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Scripting/FileIo.x32",
+      "bytes": 40960,
+      "sha256": "0f0a616518642f786974024866830a6902ccdac8223e9dcc4a555066fa608659"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Scripting/Mui Dialog.x32",
+      "bytes": 282624,
+      "sha256": "67dafbde8966b6da4eb894608cacdeb276788148d03609611536078b766638c0"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Scripting/NetLingo.x32",
+      "bytes": 49152,
+      "sha256": "436d584756d072a623f436d8c67c3c2295dd75e1dfc42cd9b0c498fb3e94f260"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Scripting/Speech.x32",
+      "bytes": 53248,
+      "sha256": "0d4ea2badd5057cf7f4d26220007de72cf37198624c66add8afcd581ef6bd1ab"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Scripting/UIHelper.x32",
+      "bytes": 45056,
+      "sha256": "e57975d7c82e74fed1a7c2c3d90e25be2bad646507a620647550169bd3d5a5e8"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Scripting/UnzipXtra.x32",
+      "bytes": 102400,
+      "sha256": "791d6dbffe6fc62dce94e9aaa5d67d2ddcefef6faeaac801f10c6690006ad01d"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Scripting/XMLParser.x32",
+      "bytes": 167936,
+      "sha256": "56e16c094491549b1a8166838cebab9852a612469b9b2d0fc1d141d2dbffedbd"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Scripting/ZipXtra.x32",
+      "bytes": 45056,
+      "sha256": "8c894adbfa32f8e07c511c1dd27b3bd787057c3f7dfdc352ea58191ba8d607ee"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/SharpExport.x32",
+      "bytes": 167936,
+      "sha256": "7a01240f18472ca1bd0eea5ec45d7fa321f6f9d2f9dfe5e8b5ab3e76881a2d72"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/SharpUtils.x32",
+      "bytes": 1134592,
+      "sha256": "2e655795106429cd52cb073ea3af2df994c9397b445c4ea65e0ceb7d332c68b8"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Sound Import Export.x32",
+      "bytes": 90112,
+      "sha256": "acde6612c400333829cf94f5c00c7acf24224b34f2e304444a6489e27e600312"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Text Asset.x32",
+      "bytes": 94208,
+      "sha256": "db22d1b3d3734d6c3e5535d3f5b0f25aa7e8cfd9cdf875828b5edb6e43304be8"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/TextAuth.x32",
+      "bytes": 90112,
+      "sha256": "38d356cb8c5529be979f7fbae233537e8960c901b7c62499d7b67309d7dfaa96"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/TextXtra.x32",
+      "bytes": 344064,
+      "sha256": "79b5b98ea135e97749e1317d576918185ecb32d05a959539fd3d4e86d9a14231"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Tool/Filter Support/Dsbl_plg.txt",
+      "bytes": 598,
+      "sha256": "9537d56fd5eda75d7cf9a35a72e412a56c4ec8d3490bf068f429478c1d7628eb"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Tool/Filter Support/Pshopflt.x32",
+      "bytes": 135168,
+      "sha256": "c6d3bf299098825ec38c050320b5dfe582ccff4ab8d27de63562bf064dba5a46"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Tool/Filter Support/mmpsf32.dll",
+      "bytes": 6656,
+      "sha256": "94b5b9fedea93d77db8faa000c23f61484d079365bb1e72000d7ac43809c9617"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/Tool/SWACnvrt.x32",
+      "bytes": 208896,
+      "sha256": "677fe29e7f4406661aa83ddf9129e1446852375625e812c9b50be5e7f9704b0a"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/XMLParser.x32",
+      "bytes": 167936,
+      "sha256": "56e16c094491549b1a8166838cebab9852a612469b9b2d0fc1d141d2dbffedbd"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/budapi.x32",
+      "bytes": 290816,
+      "sha256": "a6af8682df2089b3397ef6a3d5e607db2e38d56b171b66642f31ecfa3c54eef5"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/fullscreen.x32",
+      "bytes": 53248,
+      "sha256": "980133c5f5ae0aefed25c2467e3f33a3db920224c5efe6799b8e680c0b9e225d"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/msRes.x32",
+      "bytes": 34304,
+      "sha256": "20ccc361fc93b1d3746fffb887721086abc9eddad39df9a7acab166aabaa9360"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/ps.x32",
+      "bytes": 90112,
+      "sha256": "b1a2287779409b13c071a2c4ff378c76760780c82e7eb05db22cfabc310d135e"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/vList.x32",
+      "bytes": 107008,
+      "sha256": "325e5de8148f6d3a42b32b460ddc6883b11ce9051524982773b40ea9691f8b20"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/vListAuthor.x32",
+      "bytes": 26624,
+      "sha256": "887c94078cfebd9961774f3483abc2187d04b6b3fd1859407311fea42d9ee89f"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/xcursor.x32",
+      "bytes": 43008,
+      "sha256": "d2ec62089c28968d949b777f9d6c9ed91566bc83cc14474d3e044ef8ca34df0f"
+    },
+    {
+      "path": "gutfeel-installed/Client/Xtras/zlib.x32",
+      "bytes": 106496,
+      "sha256": "c9fdeb93958a985f2fdac4fdc6f3bb6cfa4a66edfd4ed5f3234b917bf3aac1a8"
+    },
+    {
+      "path": "gutfeel-installed/Client/goMU.dcr",
+      "bytes": 43826,
+      "sha256": "9022cfc55959a30f546b5a10c7fb6a9986f96737845c4e84c3e9cc07b7a9c4c0"
+    },
+    {
+      "path": "gutfeel-installed/Host/DSConfig.amd",
+      "bytes": 10939,
+      "sha256": "6bb98b722c91e162c5d39bc35daeb46911cc5e294b71d5e419f95fcf37c49ad1"
+    },
+    {
+      "path": "gutfeel-installed/Host/Gut Feel Facilitation Guide.pdf",
+      "bytes": 279144,
+      "sha256": "adeb784ab7d8aa476e901e0f3d628816130aa805ab3f456d3f729b700b5abdd5"
+    },
+    {
+      "path": "gutfeel-installed/Host/Host.exe",
+      "bytes": 9468050,
+      "sha256": "35f698d28781ac28c6ffac0e2b914e298747da0bd7e513f42ddb2f3e9b2808eb"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/DBObjectFiles/APPDATA.CDX",
+      "bytes": 3072,
+      "sha256": "032057ece8149487f337e15a3379876011eae103d2475686b26bcee75b3768e9"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/DBObjectFiles/APPDATA.DBF",
+      "bytes": 361,
+      "sha256": "bd11d5ac13fa4d754c2a4b5de371a485caf99d719f76dd2efd49c7b81b3f5308"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/DBObjectFiles/APPLICATIONS.CDX",
+      "bytes": 3072,
+      "sha256": "3f6ba8eda8c5c857ecebb4b87766a010cc7fc97730a8731a63451de3af73c721"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/DBObjectFiles/APPLICATIONS.DBF",
+      "bytes": 361,
+      "sha256": "2541c6d535e3182d0b82df6b4c172931425aebaede1bf64a7ea0321b59c340ea"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/DBObjectFiles/ATTRIBUTES.CDX",
+      "bytes": 3072,
+      "sha256": "0c19aee5e8836c1d00ff627bc29b5c7d39270c795fda0834d0c821baec0d0cca"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/DBObjectFiles/ATTRIBUTES.DBF",
+      "bytes": 1057,
+      "sha256": "52b177f1fbea3f7d2c1d48d32db732e5e8a60690a4bb4d7cfaa9dea1fb942195"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/DBObjectFiles/ATTRLIST.CDX",
+      "bytes": 3072,
+      "sha256": "720f73c6e3a7aedd3a6efb3a4d5225a1cb62a52d3b3fb3b7bb402ef927203365"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/DBObjectFiles/ATTRLIST.DBF",
+      "bytes": 1201,
+      "sha256": "aa3dff547f885a05b31ef0041a980dc5e9264245d1745cebd9d1749c400178ad"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/DBObjectFiles/IDTABLE.CDX",
+      "bytes": 3072,
+      "sha256": "a2b3de4aa5985cc6959b4fd23dabb984c24046e721dcd2872add2a9ecc2258ac"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/DBObjectFiles/IDTABLE.DBF",
+      "bytes": 481,
+      "sha256": "271364208a929a1e62d6181e76ece539bec69b56bc8881c4fdd7ede860ef69ba"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/DBObjectFiles/PLAYERS.CDX",
+      "bytes": 3072,
+      "sha256": "285c22f0489608841a05ed74027d648608fb42f48eeae1f8ef9b54266f5bb837"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/DBObjectFiles/PLAYERS.DBF",
+      "bytes": 393,
+      "sha256": "9d49483770165539d0942685763bfcfe908aa7bcc6c6c13a152f06bfbbba0553"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/DBObjectFiles/RAWDATA.CDX",
+      "bytes": 3072,
+      "sha256": "5f7cf1cd6eb2cfd6c1c537f1490713e76cbe9124dbd185bb13f28ede575e06e0"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/DBObjectFiles/RAWDATA.DBF",
+      "bytes": 361,
+      "sha256": "f5f480e3618721650a0eb5c0e4f5b1018dc2318ef8dfbd9f1e9454b727010a75"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/DBObjectFiles/RAWDATA.FPT",
+      "bytes": 512,
+      "sha256": "a16a38d5f6ebee2272758133346f6afbbdb5b18b8c1ed5ea5b48f0e1fc338636"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/DBObjectFiles/USERS.CDX",
+      "bytes": 3072,
+      "sha256": "96e9ee37383b45edf753729a6d7417d55ef3562d3e0b1d695a18ebe71d96b012"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/DBObjectFiles/USERS.DBF",
+      "bytes": 493,
+      "sha256": "a377db521fc9cf6443d8ffa02173fbddc77e606238929cfa2e606b70e1ce6452"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/INSTALL.LOG",
+      "bytes": 4879,
+      "sha256": "0c039454a3bf14506d0b92ce85f3ef8eb3b267cf0f163d8e9a5e36ca02224618"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/Iml32.dll",
+      "bytes": 561152,
+      "sha256": "dff34b84413df9c1241624f423fd959f678653449cc8d467f5a51bb8fcafcc61"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/Movie.cfg",
+      "bytes": 7549,
+      "sha256": "353c10c3fbe7e06b3e5a0c7b5395ee8fd0d4fe6096c8a810865ea36e12297f0b"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/Multiuser.cfg",
+      "bytes": 17835,
+      "sha256": "803231d59364b6fac8071755ff561d04f2e8687db9ad46630a0458046561dda4"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/Multiuser.cfg.bak",
+      "bytes": 17830,
+      "sha256": "afe281b5190f58d0ffd1fc0eeca753eeae78196ecd7298a2ffca820383ee3c8e"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/MultiuserServer.exe",
+      "bytes": 356352,
+      "sha256": "182160e8762f6eb07f9e29eba738199805432330707a4085987fb424b55d6b2b"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/Multiuserbackup.cfg",
+      "bytes": 17759,
+      "sha256": "ee4e2b3598ec0deffd4405ea4273a17cd2daf95fb31e9467cad3836a0e7ab6d1"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/Readme.htm",
+      "bytes": 3010,
+      "sha256": "4fcaef5d33fe2d237b65c9586e3d8bc5f229212b3db3fc8c90be34b9a57f7f44"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/SWServerMOACache",
+      "bytes": 2622,
+      "sha256": "a2031dd506034522cdd482700b796b02f93a03accbf7f57f179d4bfd8daa16a8"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/Scripts/Dispatcher.ls",
+      "bytes": 28154,
+      "sha256": "5c6f11835884c7213601cba7a7eebdee27e7451813dfa0470965215835b3b6b1"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/Scripts/GlobalScripts.ls",
+      "bytes": 385,
+      "sha256": "3a05c538f6ac9b6bcd21bbe97c1e8b95ef36a5d8d36ea9e55c79a515f39390df"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/Scripts/Scriptmap.ls",
+      "bytes": 4288,
+      "sha256": "5e2d5465136cc5708710e5efa457993067a04e9bbb6ba5d05e9dbda56db82b01"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/Scripts/serverLogger.ls",
+      "bytes": 3728,
+      "sha256": "3f64453583160410cb78fa17a5c5846b1ca267ce68a5fad2fff808d75413fd0e"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/UNWISE.EXE",
+      "bytes": 149504,
+      "sha256": "49ef36bd01b8ebf38c7b807a5fb44cbaf47c9d4efa883b01c41494c61ae4a2e2"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/Xtras/DBObject.x32",
+      "bytes": 122880,
+      "sha256": "d953207a7db06cfab1ec93b8466abd3bf71faf93972bcce967b38d2356387fe4"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/Xtras/LingoVM.x32",
+      "bytes": 229376,
+      "sha256": "c988783ce8b4c3d8b6e4fd9d83b4ec93b5fac88ddda8248f83656251c85e26bc"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/Xtras/RuntimeAttr.x32",
+      "bytes": 40960,
+      "sha256": "0f2d5bcf14486c52eb12baf38f41b91f397fb88be97eb1379d69806aed6f5443"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/c4dll.dll",
+      "bytes": 204800,
+      "sha256": "6437f1ec7ade11c06d06437ec9ae2ebac787638d3c2d5b8b454a6ef60725152c"
+    },
+    {
+      "path": "gutfeel-installed/Host/Shockwave Multiuser Server 3.0/msvcrt.dll",
+      "bytes": 280576,
+      "sha256": "df9f2aab7f7119f214c5d743d961fde4bf324f19011fbbb7e9cf666856fba0ba"
+    },
+    {
+      "path": "gutfeel-installed/Host/goMU.dcr",
+      "bytes": 43826,
+      "sha256": "9022cfc55959a30f546b5a10c7fb6a9986f96737845c4e84c3e9cc07b7a9c4c0"
+    },
+    {
+      "path": "gutfeel-installed/Tutorial/DSConfig.amd",
+      "bytes": 7307,
+      "sha256": "8f1660ef850d649fc7f5c9b43327f2b1e0771c5edded881b3ebee67903888a9f"
+    },
+    {
+      "path": "gutfeel-installed/Tutorial/GutFeelTutorial.exe",
+      "bytes": 84718850,
+      "sha256": "4ecccdde0b762d47db0be577ee54ec2f7da316d9bcd06cc6ce9a0766d8bfa9e1"
+    },
+    {
+      "path": "gutfeel-installed/Tutorial/goMU.dcr",
+      "bytes": 43826,
+      "sha256": "9022cfc55959a30f546b5a10c7fb6a9986f96737845c4e84c3e9cc07b7a9c4c0"
+    },
+    {
+      "path": "gutfeel-installed/Uninstall/IRIMG1.JPG",
+      "bytes": 37640,
+      "sha256": "bae61d135f58d99ee3bb37d808cea011a054ce04750790b425795e1de47cc8cd"
+    },
+    {
+      "path": "gutfeel-installed/Uninstall/IRIMG2.JPG",
+      "bytes": 53406,
+      "sha256": "7026edece43740b71b858b7279645375f8320b468d48f4ce1195dbada58ed6cf"
+    },
+    {
+      "path": "gutfeel-installed/Uninstall/IRIMG3.JPG",
+      "bytes": 37642,
+      "sha256": "7c62c85ad340278349513f1564b9def69a064c8010b344a821fbd28ded10323a"
+    },
+    {
+      "path": "gutfeel-installed/Uninstall/uninstall.dat",
+      "bytes": 74432,
+      "sha256": "a5a7d554948209e953b89f009023f268290512cf0d561f5031326af476b1737b"
+    },
+    {
+      "path": "gutfeel-installed/Uninstall/uninstall.xml",
+      "bytes": 39785,
+      "sha256": "b8b01f0942bded77e4ffd3809906c5b49ee4da0739be18d4c9d944dcf5dd3108"
+    },
+    {
+      "path": "gutfeel-installed/report/AdobeAIRInstaller.exe",
+      "bytes": 11806656,
+      "sha256": "b043359fdc5ffbbf2b7668d0af1561a0deff53ca17f6545b1ee6cd3d13f5bc54"
+    },
+    {
+      "path": "gutfeel-installed/report/GutFeelReporter.air",
+      "bytes": 1078109,
+      "sha256": "e04104b1c46128962d10196cd6b849fed49cd89f81ecc4081612847d38916800"
+    }
+  ]
+}

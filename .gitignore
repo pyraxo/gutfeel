@@ -1,0 +1,69 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.keystore
+credentials.json
+secrets.*
+
+# Dependencies, build products, and caches
+node_modules/
+coverage/
+.nyc_output/
+dist/
+build/
+target/
+pkg/
+*.py[cod]
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local test and investigation output
+test-artifacts/
+test-results/
+playwright-report/
+tmp/
+*.log
+*.cpuprofile
+*.attest
+
+# Keep implementation, migration, investigation, and validation notes local.
+# Only the user-facing game rules and deployment guide belong in the public repo.
+docs/*
+!docs/ORIGINAL_RULES.md
+!docs/SELF_HOSTING.md
+tools/native-key-hold.m
+tools/native-reference-app-launcher.c
+tools/native-reference-harness.c
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Upstream checkout and its multi-gigabyte build tree. Recreated by
+# tools/build-runtime.sh from the pinned commit plus recovered/runtime.patch.
+vendor/
+
+# Local native-reference environment and generated recovery output
+recovered/reference-wine/
+recovered/native-reference-input/
+recovered/native-reference-output/
+recovered/native-reference-tools/
+recovered/director/
+recovered/report/
+
+# Preserved third-party game installation. This tree includes copyrighted
+# binaries/media and a legacy plaintext account; do not publish by default.
+gut_feel_setup.exe
+gutfeel-installed/
